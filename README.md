@@ -17,6 +17,7 @@ npm run cypress
 ```
 
 1. `00-start` just TodoMVC application running at `localhost:8888`
+2. `01-first-test` adds Cypress and first end-to-end test
 
 ## Tests
 
