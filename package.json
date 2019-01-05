@@ -4,7 +4,8 @@
   "description": "Example Cypress tests going from page objects to app actions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 8888 -c-1"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/bahmutov/test-todomvc-using-app-actions/issues"
   },
-  "homepage": "https://github.com/bahmutov/test-todomvc-using-app-actions#readme"
+  "homepage": "https://github.com/bahmutov/test-todomvc-using-app-actions#readme",
+  "dependencies": {
+    "http-server": "0.11.1"
+  }
 }
