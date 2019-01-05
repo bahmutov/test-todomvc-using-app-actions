@@ -1,0 +1,25 @@
+{
+  "name": "test-todomvc-using-app-actions",
+  "version": "1.0.0",
+  "description": "Example Cypress tests going from page objects to app actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/test-todomvc-using-app-actions.git"
+  },
+  "keywords": [
+    "cypress",
+    "cypress-io",
+    "cypress-example",
+    "todomvc"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com> (https://glebbahmutov.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/test-todomvc-using-app-actions/issues"
+  },
+  "homepage": "https://github.com/bahmutov/test-todomvc-using-app-actions#readme"
+}
