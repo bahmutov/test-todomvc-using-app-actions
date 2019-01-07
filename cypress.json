@@ -1,4 +1,7 @@
 {
   "baseUrl": "http://localhost:8888",
-  "ignoreTestFiles": "*.page.js"
+  "ignoreTestFiles": [
+    "*.page.js",
+    "utils.js"
+  ]
 }

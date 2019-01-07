@@ -26,11 +26,13 @@ var app = app || {}
     })
   }
 
-  app.TodoModel.prototype.addTodo = function (title) {
-    this.todos = this.todos.concat({
-      id: Utils.uuid(),
-      title,
-      completed: false,
+  app.TodoModel.prototype.addTodo = function (...titles) {
+    titles.forEach(title => {
+      this.todos = this.todos.concat({
+        id: Utils.uuid(),
+        title,
+        completed: false
+      })
     })
 
     this.inform()
