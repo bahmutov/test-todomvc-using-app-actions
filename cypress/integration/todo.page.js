@@ -17,7 +17,40 @@ export class TodoPage {
 
     cy.log('TodoPage: created todos')
 
-    return cy.get('.todo-list li', { log: false })
+    cy.get('.todo-list li', { log: false }).as('todos')
+  }
+
+  createTodo (todo) {
+    cy.get('.new-todo', { log: false }).type(`${todo}{enter}`, { log: false })
+    cy.log(`Created todo "${todo}"`)
+    return cy
+      .get('.todo-list', { log: false })
+      .contains('li', todo.trim(), { log: false })
+  }
+
+  toggle (k) {
+    cy.get('.todo-list li', { log: false })
+      .eq(k)
+      .find('.toggle')
+      .check()
+  }
+
+  todos (k) {
+    if (k !== undefined) {
+      return cy.get('.todo-list li').eq(k)
+    }
+
+    return cy.get('.todo-list li')
+  }
+
+  filter (label) {
+    cy.get('.filters')
+      .contains(label)
+      .click()
+  }
+
+  clearCompleted () {
+    cy.get('.clear-completed').click()
   }
 }
 
