@@ -7,6 +7,8 @@
 // check this file using TypeScript if available
 // @ts-check
 
+import { TodoPage, todoPage } from './todo.page'
+
 // ***********************************************
 // All of these tests are written to implement
 // the official TodoMVC tests written for Selenium.
@@ -21,11 +23,6 @@
 // ***********************************************
 
 describe('TodoMVC - React', function () {
-  // setup these constants to match what TodoMVC does
-  let TODO_ITEM_ONE = 'buy some cheese'
-  let TODO_ITEM_TWO = 'feed the cat'
-  let TODO_ITEM_THREE = 'book a doctors appointment'
-
   beforeEach(function () {
     // By default Cypress will automatically
     // clear the Local Storage prior to each
@@ -40,7 +37,7 @@ describe('TodoMVC - React', function () {
     // which is automatically prepended to cy.visit
     //
     // https://on.cypress.io/api/visit
-    cy.visit('/')
+    todoPage.visit()
   })
 
   // a very simple example helpful during presentations
@@ -87,25 +84,25 @@ describe('TodoMVC - React', function () {
     it('should allow me to add todo items', function () {
       // create 1st todo
       cy.get('.new-todo')
-        .type(TODO_ITEM_ONE)
+        .type(TodoPage.TODO_ITEM_ONE)
         .type('{enter}')
 
       // make sure the 1st label contains the 1st todo text
       cy.get('.todo-list li')
         .eq(0)
         .find('label')
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
 
       // create 2nd todo
       cy.get('.new-todo')
-        .type(TODO_ITEM_TWO)
+        .type(TodoPage.TODO_ITEM_TWO)
         .type('{enter}')
 
       // make sure the 2nd label contains the 2nd todo text
       cy.get('.todo-list li')
         .eq(1)
         .find('label')
-        .should('contain', TODO_ITEM_TWO)
+        .should('contain', TodoPage.TODO_ITEM_TWO)
     })
 
     it('adds items', function () {
@@ -120,7 +117,7 @@ describe('TodoMVC - React', function () {
 
     it('should clear text input field when an item is added', function () {
       cy.get('.new-todo')
-        .type(TODO_ITEM_ONE)
+        .type(TodoPage.TODO_ITEM_ONE)
         .type('{enter}')
       cy.get('.new-todo').should('have.text', '')
     })
@@ -138,15 +135,15 @@ describe('TodoMVC - React', function () {
       cy.get('@todos')
         .eq(0)
         .find('label')
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
       cy.get('@todos')
         .eq(1)
         .find('label')
-        .should('contain', TODO_ITEM_TWO)
+        .should('contain', TodoPage.TODO_ITEM_TWO)
       cy.get('@todos')
         .eq(2)
         .find('label')
-        .should('contain', TODO_ITEM_THREE)
+        .should('contain', TodoPage.TODO_ITEM_THREE)
     })
 
     it('should trim text input', function () {
@@ -155,18 +152,18 @@ describe('TodoMVC - React', function () {
       // again. It's up to you to decide when to abstract
       // repetitive behavior and roll that up into a custom
       // command vs explicitly writing the code.
-      cy.createTodo(` ${TODO_ITEM_ONE} `)
+      cy.createTodo(` ${TodoPage.TODO_ITEM_ONE} `)
 
       // we use as explicit assertion here about the text instead of
       // using 'contain' so we can specify the exact text of the element
       // does not have any whitespace around it
       cy.get('.todo-list li')
         .eq(0)
-        .should('have.text', TODO_ITEM_ONE)
+        .should('have.text', TodoPage.TODO_ITEM_ONE)
     })
 
     it('should show #main and #footer when items added', function () {
-      cy.createTodo(TODO_ITEM_ONE)
+      cy.createTodo(TodoPage.TODO_ITEM_ONE)
       cy.get('.main').should('be.visible')
       cy.get('.footer').should('be.visible')
     })
@@ -260,8 +257,8 @@ describe('TodoMVC - React', function () {
       // our custom command 'createTodo'
       //
       // the return value is the <li> in the <ul.todos-list>
-      cy.createTodo(TODO_ITEM_ONE).as('firstTodo')
-      cy.createTodo(TODO_ITEM_TWO).as('secondTodo')
+      cy.createTodo(TodoPage.TODO_ITEM_ONE).as('firstTodo')
+      cy.createTodo(TodoPage.TODO_ITEM_TWO).as('secondTodo')
 
       cy.get('@firstTodo')
         .find('.toggle')
@@ -278,8 +275,8 @@ describe('TodoMVC - React', function () {
     })
 
     it('should allow me to un-mark items as complete', function () {
-      cy.createTodo(TODO_ITEM_ONE).as('firstTodo')
-      cy.createTodo(TODO_ITEM_TWO).as('secondTodo')
+      cy.createTodo(TodoPage.TODO_ITEM_ONE).as('firstTodo')
+      cy.createTodo(TodoPage.TODO_ITEM_TWO).as('secondTodo')
 
       cy.get('@firstTodo')
         .find('.toggle')
@@ -316,11 +313,11 @@ describe('TodoMVC - React', function () {
       // explicitly assert about the text value
       cy.get('@todos')
         .eq(0)
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
       cy.get('@secondTodo').should('contain', 'buy some sausages')
       cy.get('@todos')
         .eq(2)
-        .should('contain', TODO_ITEM_THREE)
+        .should('contain', TodoPage.TODO_ITEM_THREE)
     })
   })
 
@@ -366,11 +363,11 @@ describe('TodoMVC - React', function () {
 
       cy.get('@todos')
         .eq(0)
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
       cy.get('@secondTodo').should('contain', 'buy some sausages')
       cy.get('@todos')
         .eq(2)
-        .should('contain', TODO_ITEM_THREE)
+        .should('contain', TodoPage.TODO_ITEM_THREE)
     })
 
     it('should trim entered text', function () {
@@ -388,11 +385,11 @@ describe('TodoMVC - React', function () {
 
       cy.get('@todos')
         .eq(0)
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
       cy.get('@secondTodo').should('contain', 'buy some sausages')
       cy.get('@todos')
         .eq(2)
-        .should('contain', TODO_ITEM_THREE)
+        .should('contain', TodoPage.TODO_ITEM_THREE)
     })
 
     it('should remove the item if an empty text string was entered', function () {
@@ -424,21 +421,21 @@ describe('TodoMVC - React', function () {
 
       cy.get('@todos')
         .eq(0)
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
       cy.get('@todos')
         .eq(1)
-        .should('contain', TODO_ITEM_TWO)
+        .should('contain', TodoPage.TODO_ITEM_TWO)
       cy.get('@todos')
         .eq(2)
-        .should('contain', TODO_ITEM_THREE)
+        .should('contain', TodoPage.TODO_ITEM_THREE)
     })
   })
 
   context('Counter', function () {
     it('should display the current number of todo items', function () {
-      cy.createTodo(TODO_ITEM_ONE)
+      cy.createTodo(TodoPage.TODO_ITEM_ONE)
       cy.get('.todo-count').contains('1 item left')
-      cy.createTodo(TODO_ITEM_TWO)
+      cy.createTodo(TodoPage.TODO_ITEM_TWO)
       cy.get('.todo-count').contains('2 items left')
     })
   })
@@ -465,10 +462,10 @@ describe('TodoMVC - React', function () {
       cy.get('@todos').should('have.length', 2)
       cy.get('@todos')
         .eq(0)
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
       cy.get('@todos')
         .eq(1)
-        .should('contain', TODO_ITEM_THREE)
+        .should('contain', TodoPage.TODO_ITEM_THREE)
     })
 
     it('should be hidden when there are no items that are completed', function () {
@@ -489,15 +486,15 @@ describe('TodoMVC - React', function () {
       // by writing out this function
       function testState () {
         cy.get('@firstTodo')
-          .should('contain', TODO_ITEM_ONE)
+          .should('contain', TodoPage.TODO_ITEM_ONE)
           .and('have.class', 'completed')
         cy.get('@secondTodo')
-          .should('contain', TODO_ITEM_TWO)
+          .should('contain', TodoPage.TODO_ITEM_TWO)
           .and('not.have.class', 'completed')
       }
 
-      cy.createTodo(TODO_ITEM_ONE).as('firstTodo')
-      cy.createTodo(TODO_ITEM_TWO).as('secondTodo')
+      cy.createTodo(TodoPage.TODO_ITEM_ONE).as('firstTodo')
+      cy.createTodo(TodoPage.TODO_ITEM_TWO).as('secondTodo')
       cy.get('@firstTodo')
         .find('.toggle')
         .check()
@@ -516,7 +513,8 @@ describe('TodoMVC - React', function () {
     // https://on.cypress.io/within
 
     beforeEach(function () {
-      cy.createDefaultTodos().as('todos')
+      // cy.createDefaultTodos().as('todos')
+      todoPage.createTodos().as('todos')
     })
 
     it('should allow me to display active items', function () {
@@ -529,10 +527,10 @@ describe('TodoMVC - React', function () {
         .click()
       cy.get('@todos')
         .eq(0)
-        .should('contain', TODO_ITEM_ONE)
+        .should('contain', TodoPage.TODO_ITEM_ONE)
       cy.get('@todos')
         .eq(1)
-        .should('contain', TODO_ITEM_THREE)
+        .should('contain', TodoPage.TODO_ITEM_THREE)
     })
 
     it('should respect the back button', function () {
