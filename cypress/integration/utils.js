@@ -12,10 +12,8 @@ export const TODO_ITEM_THREE = 'book a doctors appointment'
  *  beforeEach(addDefaultTodos)
  */
 export const addDefaultTodos = () => {
-  cy.window()
-    .its('model')
-    .invoke('addTodo', TODO_ITEM_ONE, TODO_ITEM_TWO, TODO_ITEM_THREE)
-  cy.get('.todo-list li').as('todos')
+  addTodos(TODO_ITEM_ONE, TODO_ITEM_TWO, TODO_ITEM_THREE)
+  allItems().as('todos')
 }
 
 /**
