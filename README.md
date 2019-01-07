@@ -19,7 +19,7 @@ npm run cypress
 1. `00-start` just TodoMVC application running at `localhost:8888`
 2. `01-first-test` adds Cypress and first end-to-end test
 3. `02-tests` brings a lot of tests from [cypress-example-todomvc](https://github.com/cypress-io/cypress-example-todomvc), all tests work through UI (page), sometimes using custom commands
-4. `03-page-object` drives app via page object
+4. `03-page-object` drives app via page object [todo.page.js](cypress/integration/todo.page.js)
 
 ## Tests
 
