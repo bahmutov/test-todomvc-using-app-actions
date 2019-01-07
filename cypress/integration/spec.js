@@ -4,7 +4,7 @@
 // check this file using TypeScript if available
 // @ts-check
 
-import { TodoPage, todoPage } from './todo.page'
+import { TodoPage, todoPage } from './todo.page';
 
 // ***********************************************
 // All of these tests are written to implement
@@ -21,19 +21,6 @@ import { TodoPage, todoPage } from './todo.page'
 
 describe('TodoMVC - React', function () {
   beforeEach(function () {
-    // By default Cypress will automatically
-    // clear the Local Storage prior to each
-    // test which ensures no todos carry over
-    // between tests.
-    //
-    // Go out and visit our local web server
-    // before each test, which serves us the
-    // TodoMVC App we want to test against
-    //
-    // We've set our baseUrl to be http://localhost:8888
-    // which is automatically prepended to cy.visit
-    //
-    // https://on.cypress.io/api/visit
     todoPage.visit()
   })
 

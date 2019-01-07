@@ -35,6 +35,10 @@ export class TodoPage {
       .check()
   }
 
+  /**
+   * Returns either all todo items on the page,
+   * or just a given one (zero index)
+   */
   todos (k) {
     if (k !== undefined) {
       return cy.get('.todo-list li').eq(k)
