@@ -1,6 +1,7 @@
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
-
+// type definition for out TodoModel
+/// <reference path='./model.d.ts' />
 // @ts-check
 import {
   addDefaultTodos,

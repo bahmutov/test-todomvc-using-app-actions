@@ -2,6 +2,7 @@
   "baseUrl": "http://localhost:8888",
   "ignoreTestFiles": [
     "*.page.js",
-    "utils.js"
+    "utils.js",
+    "*.d.ts"
   ]
 }
