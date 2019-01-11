@@ -3,15 +3,7 @@
 // type definition for out TodoModel
 /// <reference path='./model.d.ts' />
 // @ts-check
-import {
-  addDefaultTodos,
-  addTodos,
-  allItems,
-  TODO_ITEM_ONE,
-  TODO_ITEM_THREE,
-  TODO_ITEM_TWO,
-  toggle
-} from './utils'
+import { addDefaultTodos, addTodos, allItems, TODO_ITEM_ONE, TODO_ITEM_THREE, TODO_ITEM_TWO, toggle } from './utils';
 
 describe('TodoMVC', function () {
   beforeEach(function () {

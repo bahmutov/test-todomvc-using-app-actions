@@ -7,6 +7,7 @@ interface TodoModel {
   todos: unknown[]
   addTodo(...todos: string[])
   toggle(item: unknown)
+  // low level methods
   inform()
 }
 // During tests there we set "window.model" property

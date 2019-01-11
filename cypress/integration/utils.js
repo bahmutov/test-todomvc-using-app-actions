@@ -14,7 +14,9 @@ export const TODO_ITEM_THREE = 'book a doctors appointment'
  *  beforeEach(addDefaultTodos)
  */
 export const addDefaultTodos = () => {
-  addTodos(TODO_ITEM_ONE, TODO_ITEM_TWO, TODO_ITEM_THREE)
+  cy.window()
+    .its('model')
+    .invoke('addTodo', TODO_ITEM_ONE, TODO_ITEM_TWO, TODO_ITEM_THREE)
   allItems().as('todos')
 }
 
@@ -59,6 +61,7 @@ export const toggle = (k = 0) =>
     .then(model => {
       expect(k, 'check item index').to.be.lessThan(model.todos.length)
       model.toggle(model.todos[k])
+      cy.log(`Toggled item ${k}`)
     })
 
 const ALL_ITEMS = '.todo-list li'
