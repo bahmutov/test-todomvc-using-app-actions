@@ -26,3 +26,39 @@ npm run cypress
 ## Tests
 
 All tests are in folder [cypress/integration](cypress/integration). Common test settings are in [cypress.json](cypress.json) file.
+
+## IntelliSense
+
+In the application code [js/app.jsx](js/app.jsx) we set `window.model = ...` to expose our model instance for app actions to work. If we use TypeScript check via `// @ts-check` directive, we need to "tell" TS compiler that there is a new property `model` on the global `window` object. We can do this by writing file [cypress/integration/model.d.ts](cypress/integration/model.d.ts) with interface definition for `TodoModel` and `window` update. Something like this
+
+```ts
+interface TodoModel {
+  todos: unknown[]
+  addTodo(...todos: string[])
+  // more methods
+}
+// During tests there we set "window.model" property
+// now cy.window() returns Window instance with
+// the "model" property that has TodoModel interface
+interface Window {
+  model: TodoModel
+}
+```
+
+From our JavaScript spec files, we need to load this `model.d.ts` file, and we can do this using special `/// <reference>` comment.
+
+```js
+// type definitions for Cypress object "cy"
+/// <reference types="cypress" />
+// type definition for out TodoModel
+/// <reference path='./model.d.ts' />
+// @ts-check
+```
+
+Now whenever you use `cy.window().its('model')` command, IntelliSense will correctly suggest the "model" property.
+
+![Model property](images/its-model.png)
+
+And you can invoke the right methods on the `window.model`
+
+![model properties](images/model-properties.png)
