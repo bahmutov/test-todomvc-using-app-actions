@@ -62,3 +62,5 @@ Now whenever you use `cy.window().its('model')` command, IntelliSense will corre
 And you can invoke the right methods on the `window.model`
 
 ![model properties](images/model-properties.png)
+
+Read more about [intelligent code completion in Cypress](https://on.cypress.io/intelligent-code-completion).
