@@ -1,4 +1,4 @@
-# test-todomvc-using-app-actions
+# test-todomvc-using-app-actions [![renovate-app badge][renovate-badge]][renovate-app]
 
 > Example Cypress tests going from page objects to app actions
 
@@ -64,3 +64,6 @@ And you can invoke the right methods on the `window.model`
 ![model properties](images/model-properties.png)
 
 Read more about [intelligent code completion in Cypress](https://on.cypress.io/intelligent-code-completion).
+
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
