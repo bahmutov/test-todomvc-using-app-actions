@@ -1,4 +1,4 @@
-# test-todomvc-using-app-actions [![renovate-app badge][renovate-badge]][renovate-app]
+# test-todomvc-using-app-actions [![Build status][ci-image]][ci-url] [![renovate-app badge][renovate-badge]][renovate-app]
 
 > Example Cypress tests going from page objects to app actions
 
@@ -67,3 +67,5 @@ Read more about [intelligent code completion in Cypress](https://on.cypress.io/i
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
+[ci-image]: https://circleci.com/gh/bahmutov/test-todomvc-using-app-actions.svg?style=svg
+[ci-url]: https://circleci.com/gh/bahmutov/test-todomvc-using-app-actions
