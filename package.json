@@ -20,6 +20,7 @@
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com> (https://glebbahmutov.com/)",
   "license": "MIT",
+  "private": true,
   "bugs": {
     "url": "https://github.com/bahmutov/test-todomvc-using-app-actions/issues"
   },
