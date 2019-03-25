@@ -35,6 +35,7 @@ export const addDefaultTodos = () => {
 export const addTodos = (...todos) => {
   cy.window()
     .its('model')
+    .should('be.an', 'object')
     .invoke('addTodo', ...todos)
 }
 
@@ -56,6 +57,7 @@ export const toggle = (k = 0) =>
   cy
     .window()
     .its('model')
+    .should('be.an', 'object')
     .then(model => {
       expect(k, 'check item index').to.be.lessThan(model.todos.length)
       model.toggle(model.todos[k])

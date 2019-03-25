@@ -136,6 +136,7 @@ describe('TodoMVC', function () {
     it('calls inform', () => {
       cy.window()
         .its('model')
+        .should('be.an', 'object')
         .then(model => {
           cy.spy(model, 'inform').as('inform')
         })
