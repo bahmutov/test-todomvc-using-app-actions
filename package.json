@@ -6,7 +6,8 @@
   "scripts": {
     "test": "cypress run",
     "start": "http-server -p 8888 -c-1",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "dev": "start-test 8888 cypress"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "http-server": "0.11.1"
   },
   "devDependencies": {
-    "cypress": "3.4.1"
+    "cypress": "3.4.1",
+    "start-server-and-test": "1.10.2"
   }
 }
