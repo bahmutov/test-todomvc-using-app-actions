@@ -30,7 +30,7 @@
     "http-server": "0.11.1"
   },
   "devDependencies": {
-    "cypress": "3.5.0",
+    "cypress": "3.6.0",
     "start-server-and-test": "1.10.6"
   }
 }
