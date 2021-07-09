@@ -58,7 +58,7 @@ export const toggle = (k = 0) =>
     .window()
     .its('model')
     .should('be.an', 'object')
-    .then(model => {
+    .then((model) => {
       expect(k, 'check item index').to.be.lessThan(model.todos.length)
       model.toggle(model.todos[k])
     })
