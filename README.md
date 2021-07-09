@@ -1,4 +1,4 @@
-# test-todomvc-using-app-actions [![Build status][ci-image]][ci-url] [![renovate-app badge][renovate-badge]][renovate-app]
+# test-todomvc-using-app-actions [![Build status][ci-image]][ci-url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-7.7.0-brightgreen)
 
 > Example Cypress tests going from page objects to app actions
 
