@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "cypress": "8.2.0",
-    "cypress-watch-and-reload": "^1.4.2",
+    "cypress-watch-and-reload": "1.4.2",
     "prettier": "2.3.2",
     "start-server-and-test": "1.13.1"
   }
