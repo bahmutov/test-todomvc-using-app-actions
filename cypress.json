@@ -4,5 +4,8 @@
     "*.page.js",
     "utils.js",
     "*.d.ts"
-  ]
+  ],
+  "cypress-watch-and-reload": {
+    "watch": "js/*"
+  }
 }
