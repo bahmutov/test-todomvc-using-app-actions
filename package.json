@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/bahmutov/test-todomvc-using-app-actions#readme",
   "dependencies": {
-    "http-server": "0.13.0"
+    "http-server": "13.0.0"
   },
   "devDependencies": {
     "cypress": "8.2.0",
