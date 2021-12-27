@@ -30,7 +30,7 @@
     "http-server": "13.0.2"
   },
   "devDependencies": {
-    "cypress": "8.7.0",
+    "cypress": "9.2.0",
     "cypress-watch-and-reload": "1.4.3",
     "prettier": "2.5.1",
     "start-server-and-test": "1.14.0"
