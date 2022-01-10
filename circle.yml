@@ -7,6 +7,8 @@ workflows:
     jobs:
       - cypress/run:
           name: Run changed tests
+          start: npm start
+          no-workspace: true
           command: |
             # stop if on master branch - all tests should run there
             if [ "$CIRCLE_BRANCH" = "master" ]; then
@@ -33,5 +35,6 @@ workflows:
           name: Run all tests
           requires:
             - Run changed tests
-          build: npm run print
+          build: npm run print-tests
           start: npm start
+          no-workspace: true

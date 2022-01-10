@@ -42,7 +42,7 @@ describe('TodoMVC', function () {
       allItems().eq(2).should('not.have.class', 'completed')
     })
 
-    it('complete all checkbox should update state when items are completed / cleared', function () {
+    it('complete all checkbox should update state when items are completed / cleared', () => {
       // alias the .toggle-all for reuse later
       cy.get(TOGGLE_ALL)
         .as('toggleAll')
