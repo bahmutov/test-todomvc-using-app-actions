@@ -1,8 +1,10 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.5.1
+  # https://github.com/cypress-io/circleci-orb
+  cypress: cypress-io/cypress@1.29.0
 workflows:
   build:
     jobs:
       - cypress/run:
+          build: npm run print
           start: npm start
