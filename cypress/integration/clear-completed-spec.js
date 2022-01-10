@@ -28,7 +28,7 @@ describe('TodoMVC', function () {
 
     it(
       'should remove completed items when clicked',
-      { tags: '@sanity' },
+      { tags: ['@sanity', '@regression'] },
       function () {
         toggle(1)
         cy.get(CLEAR_COMPLETED).click()
@@ -38,10 +38,14 @@ describe('TodoMVC', function () {
       },
     )
 
-    it('should be hidden when there are no items that are completed', function () {
-      toggle(1)
-      cy.get(CLEAR_COMPLETED).should('be.visible').click()
-      cy.get(CLEAR_COMPLETED).should('not.exist')
-    })
+    it(
+      'should be hidden when there are no items that are completed',
+      { tags: '@regression' },
+      function () {
+        toggle(1)
+        cy.get(CLEAR_COMPLETED).should('be.visible').click()
+        cy.get(CLEAR_COMPLETED).should('not.exist')
+      },
+    )
   })
 })

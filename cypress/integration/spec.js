@@ -10,18 +10,22 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('When page is initially opened', function () {
-    it('should focus on the todo input field', function () {
-      // get the currently focused element and assert
-      // that it has class='new-todo'
-      //
-      // http://on.cypress.io/focused
-      cy.focused().should('have.class', 'new-todo')
-    })
-  })
+  context(
+    'When page is initially opened',
+    { tags: '@regression' },
+    function () {
+      it('should focus on the todo input field', function () {
+        // get the currently focused element and assert
+        // that it has class='new-todo'
+        //
+        // http://on.cypress.io/focused
+        cy.focused().should('have.class', 'new-todo')
+      })
+    },
+  )
 
   context('No Todos', function () {
-    it('should hide #main and #footer', function () {
+    it('should hide #main and #footer', { tags: '@regression' }, function () {
       // Unlike the TodoMVC tests, we don't need to create
       // a gazillion helper functions which are difficult to
       // parse through. Instead we'll opt to use real selectors
@@ -39,7 +43,7 @@ describe('TodoMVC', function () {
 
     it(
       'should display the current number of todo items',
-      { tags: '@sanity' },
+      { tags: ['@sanity', '@regression'] },
       function () {
         addTodos(TODO_ITEM_ONE)
         cy.get(COUNTER).contains('1 item left')

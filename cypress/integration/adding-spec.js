@@ -24,14 +24,18 @@ describe('TodoMVC', function () {
     // Input element selector for typing new todo title
     const NEW_TODO = '.new-todo'
 
-    it('should allow me to add todo items', function () {
-      cy.get(NEW_TODO).type(TODO_ITEM_ONE).type('{enter}')
-      allItems().eq(0).find('label').should('contain', TODO_ITEM_ONE)
-      cy.get(NEW_TODO).type(TODO_ITEM_TWO).type('{enter}')
-      allItems().eq(1).find('label').should('contain', TODO_ITEM_TWO)
-    })
+    it(
+      'should allow me to add todo items',
+      { tags: '@regression' },
+      function () {
+        cy.get(NEW_TODO).type(TODO_ITEM_ONE).type('{enter}')
+        allItems().eq(0).find('label').should('contain', TODO_ITEM_ONE)
+        cy.get(NEW_TODO).type(TODO_ITEM_TWO).type('{enter}')
+        allItems().eq(1).find('label').should('contain', TODO_ITEM_TWO)
+      },
+    )
 
-    it('adds items', { tags: '@sanity' }, function () {
+    it('adds items', { tags: ['@sanity', '@regression'] }, function () {
       // create several todos then check the number of items in the list
       cy.get(NEW_TODO)
         .type('todo A{enter}')
@@ -41,10 +45,14 @@ describe('TodoMVC', function () {
       allItems().should('have.length', 4)
     })
 
-    it('should clear text input field when an item is added', function () {
-      cy.get(NEW_TODO).type(TODO_ITEM_ONE).type('{enter}')
-      cy.get(NEW_TODO).should('have.text', '')
-    })
+    it(
+      'should clear text input field when an item is added',
+      { tags: '@regression' },
+      function () {
+        cy.get(NEW_TODO).type(TODO_ITEM_ONE).type('{enter}')
+        cy.get(NEW_TODO).should('have.text', '')
+      },
+    )
 
     it('should append new items to the bottom of the list', function () {
       // this is an example of a custom command
@@ -63,7 +71,7 @@ describe('TodoMVC', function () {
       allItems().eq(2).find('label').should('contain', TODO_ITEM_THREE)
     })
 
-    it('should trim text input', function () {
+    it('should trim text input', { tags: '@regression' }, function () {
       // this is an example of another custom command
       // since we repeat the todo creation over and over
       // again. It's up to you to decide when to abstract

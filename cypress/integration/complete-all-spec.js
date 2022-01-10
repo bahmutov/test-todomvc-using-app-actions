@@ -21,21 +21,25 @@ describe('TodoMVC', function () {
     // Instead they use app action "addDefaultTodos" before each test
     beforeEach(addDefaultTodos)
 
-    it('should allow me to mark all items as completed', function () {
-      // complete all todos
-      // we use 'check' instead of 'click'
-      // because that indicates our intention much clearer
-      cy.get(TOGGLE_ALL).check()
+    it(
+      'should allow me to mark all items as completed',
+      { tags: '@regression' },
+      function () {
+        // complete all todos
+        // we use 'check' instead of 'click'
+        // because that indicates our intention much clearer
+        cy.get(TOGGLE_ALL).check()
 
-      // get each todo li and ensure its class is 'completed'
-      allItems().eq(0).should('have.class', 'completed')
-      allItems().eq(1).should('have.class', 'completed')
-      allItems().eq(2).should('have.class', 'completed')
-    })
+        // get each todo li and ensure its class is 'completed'
+        allItems().eq(0).should('have.class', 'completed')
+        allItems().eq(1).should('have.class', 'completed')
+        allItems().eq(2).should('have.class', 'completed')
+      },
+    )
 
     it(
       'should allow me to clear the complete state of all items',
-      { tags: '@sanity' },
+      { tags: ['@sanity', '@regression'] },
       function () {
         // check and then immediately uncheck
         cy.get(TOGGLE_ALL).check().uncheck()
