@@ -33,7 +33,7 @@
   "devDependencies": {
     "cypress": "9.2.0",
     "cypress-watch-and-reload": "1.4.3",
-    "find-cypress-specs": "1.2.1",
+    "find-cypress-specs": "1.2.0",
     "prettier": "2.5.1",
     "start-server-and-test": "1.14.0"
   }
