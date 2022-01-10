@@ -48,11 +48,15 @@ describe('TodoMVC', function () {
       allItems().should('have.length', 3)
     })
 
-    it('should allow me to display completed items', function () {
-      toggle(1)
-      clickFilter('Completed')
-      allItems().should('have.length', 1)
-    })
+    it(
+      'should allow me to display completed items',
+      { tags: '@sanity' },
+      function () {
+        toggle(1)
+        clickFilter('Completed')
+        allItems().should('have.length', 1)
+      },
+    )
 
     it('should allow me to display all items', function () {
       toggle(1)

@@ -37,11 +37,15 @@ describe('TodoMVC', function () {
   context('Counter', function () {
     const COUNTER = '.todo-count'
 
-    it('should display the current number of todo items', function () {
-      addTodos(TODO_ITEM_ONE)
-      cy.get(COUNTER).contains('1 item left')
-      addTodos(TODO_ITEM_TWO)
-      cy.get(COUNTER).contains('2 items left')
-    })
+    it(
+      'should display the current number of todo items',
+      { tags: '@sanity' },
+      function () {
+        addTodos(TODO_ITEM_ONE)
+        cy.get(COUNTER).contains('1 item left')
+        addTodos(TODO_ITEM_TWO)
+        cy.get(COUNTER).contains('2 items left')
+      },
+    )
   })
 })

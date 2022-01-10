@@ -26,7 +26,7 @@ describe('TodoMVC', function () {
       cy.get('@secondTodo').find('label').should('not.be.visible')
     })
 
-    it('should save edits on blur', function () {
+    it('should save edits on blur', { tags: '@sanity' }, function () {
       allItems().eq(1).as('secondTodo').find('label').dblclick()
 
       cy.get('@secondTodo')

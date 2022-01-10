@@ -32,9 +32,17 @@ workflows:
             npx cypress run --spec ${specs}
 
       - cypress/run:
-          name: Run all tests
+          name: Run sanity tests
           requires:
             - Run changed tests
           build: npm run print-tests
           start: npm start
           no-workspace: true
+          env: grepTags=@sanity
+# - cypress/run:
+#           name: Run all tests
+#           requires:
+#             - Run changed tests
+#           build: npm run print-tests
+#           start: npm start
+#           no-workspace: true
