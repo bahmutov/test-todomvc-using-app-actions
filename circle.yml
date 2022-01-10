@@ -7,6 +7,7 @@ workflows:
     jobs:
       - cypress/run:
           name: Run changed tests
+          start: npm start
           command: |
             # stop if on master branch - all tests should run there
             if [ "$CIRCLE_BRANCH" = "master" ]; then
