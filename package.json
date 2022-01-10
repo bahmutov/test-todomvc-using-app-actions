@@ -7,7 +7,8 @@
     "test": "cypress run",
     "start": "http-server -p 8888 -c-1",
     "cypress": "cypress open",
-    "dev": "start-test 8888 cypress"
+    "dev": "start-test 8888 cypress",
+    "print": "find-cypress-specs --names"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "cypress": "9.2.0",
     "cypress-watch-and-reload": "1.4.3",
+    "find-cypress-specs": "^1.2.0",
     "prettier": "2.5.1",
     "start-server-and-test": "1.14.0"
   }
