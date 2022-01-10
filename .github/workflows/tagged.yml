@@ -13,9 +13,14 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
+      # unfortunately, because GitHub Actions expressions
+      # are limited, I could not come up with a better way
+      # to map boolean values to the tag strings
+
       # https://github.com/cypress-io/github-action
-      - name: Run filtered tests 🧪
+      - name: Run sanity tests
+        if: ${{ github.event.inputs.sanity }}
         uses: cypress-io/github-action@v2
         with:
           start: npm start
-          env: grepTags=${{ github.event.inputs.sanity ? '@sanity' : '' }}
+          env: grepTags=@sanity
