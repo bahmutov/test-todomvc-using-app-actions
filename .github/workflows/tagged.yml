@@ -2,10 +2,37 @@ name: tagged
 on:
   workflow_dispatch:
     inputs:
+      # these inputs will be shown to the user on GitHub Actions page
+      # and the user can simply check off the tags to run
       sanity:
         description: Run the tests tagged "@sanity"
         required: false
         type: boolean
+      adding:
+        description: Run the tests tagged "@adding"
+        required: false
+        type: boolean
+      complete:
+        description: Run the tests tagged "@complete"
+        required: false
+        type: boolean
+      editing:
+        description: Run the tests tagged "@editing"
+        required: false
+        type: boolean
+      item:
+        description: Run the tests tagged "@item"
+        required: false
+        type: boolean
+      persistence:
+        description: Run the tests tagged "@persistence"
+        required: false
+        type: boolean
+      routing:
+        description: Run the tests tagged "@routing"
+        required: false
+        type: boolean
+
 jobs:
   tagged:
     runs-on: ubuntu-20.04
@@ -24,3 +51,45 @@ jobs:
         with:
           start: npm start
           env: grepTags=@sanity
+
+      - name: Run adding tests
+        if: ${{ github.event.inputs.adding }}
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@adding
+
+      - name: Run complete tests
+        if: ${{ github.event.inputs.complete }}
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@complete
+
+      - name: Run editing tests
+        if: ${{ github.event.inputs.editing }}
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@editing
+
+      - name: Run item tests
+        if: ${{ github.event.inputs.item }}
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@item
+
+      - name: Run persistence tests
+        if: ${{ github.event.inputs.persistence }}
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@persistence
+
+      - name: Run routing tests
+        if: ${{ github.event.inputs.routing }}
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@routing
