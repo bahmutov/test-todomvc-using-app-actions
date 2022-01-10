@@ -37,10 +37,26 @@ jobs:
   tagged:
     runs-on: ubuntu-20.04
     steps:
-      - name: Print GitHub event
+      - name: Print GitHub event inputs
         env:
-          EVENT: ${{ toJson(github.event) }}
+          EVENT: ${{ toJson(github.event.inputs) }}
         run: echo "$EVENT"
+
+      - name: Run if sanity true
+        if: ${{ github.event.inputs.sanity }}
+        run: echo "It is true"
+
+      - name: Run if sanity string true
+        if: ${{ github.event.inputs.sanity == "true"}}
+        run: echo "It is string true"
+
+      - name: Run if sanity false
+        if: ${{ !github.event.inputs.sanity }}
+        run: echo "It is false"
+
+      - name: Run if sanity string false
+        if: ${{ github.event.inputs.sanity == "false"}}
+        run: echo "It is string false"
 
       # - name: Checkout 🛎
       #   uses: actions/checkout@v2
