@@ -1,0 +1,136 @@
+# separate running each grep tag into own job
+name: tagged-jos
+on:
+  workflow_dispatch:
+    inputs:
+      # these inputs will be shown to the user on GitHub Actions page
+      # and the user can simply check off the tags to run
+      sanity:
+        description: Run the tests tagged "@sanity"
+        required: false
+        type: boolean
+      adding:
+        description: Run the tests tagged "@adding"
+        required: false
+        type: boolean
+      complete:
+        description: Run the tests tagged "@complete"
+        required: false
+        type: boolean
+      editing:
+        description: Run the tests tagged "@editing"
+        required: false
+        type: boolean
+      item:
+        description: Run the tests tagged "@item"
+        required: false
+        type: boolean
+      persistence:
+        description: Run the tests tagged "@persistence"
+        required: false
+        type: boolean
+      routing:
+        description: Run the tests tagged "@routing"
+        required: false
+        type: boolean
+
+jobs:
+  # each job is independent from other jobs
+  # and only runs the tests for the picked test tag
+  sanity:
+    if: ${{ github.event.inputs.sanity == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@sanity
+
+  adding:
+    if: ${{ github.event.inputs.adding == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@adding
+
+  complete:
+    if: ${{ github.event.inputs.complete == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@complete
+
+  editing:
+    if: ${{ github.event.inputs.editing == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@editing
+
+  item:
+    if: ${{ github.event.inputs.item == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@item
+
+  persistence:
+    if: ${{ github.event.inputs.persistence == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@persistence
+
+  routing:
+    if: ${{ github.event.inputs.routing == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@routing
