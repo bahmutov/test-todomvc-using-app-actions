@@ -6,7 +6,17 @@ orbs:
 parameters:
   GREP_TAGS:
     type: enum
-    enum: ['', '@sanity', '@adding']
+    enum:
+      [
+        '',
+        '@sanity',
+        '@adding',
+        '@complete',
+        '@editing',
+        '@item',
+        '@persistence',
+        '@routing',
+      ]
     default: ''
 
 workflows:
@@ -25,6 +35,16 @@ workflows:
           build: npm run print-tests
           start: npm start
           no-workspace: true
+
+  tagged:
+    when: << pipeline.parameters.GREP_TAGS >>
+    jobs:
+      - cypress/run:
+          name: Run tagged tests
+          build: npm run print-tests
+          start: npm start
+          no-workspace: true
+          env: grepTags=<< pipeline.parameters.GREP_TAGS >>
 
   build:
     unless: << pipeline.parameters.GREP_TAGS >>
