@@ -2,6 +2,13 @@ version: 2.1
 orbs:
   # https://github.com/cypress-io/circleci-orb
   cypress: cypress-io/cypress@1.29.0
+
+parameters:
+  GREP_TAGS:
+    type: enum
+    enum: ['', '@sanity', '@adding']
+    default: ''
+
 workflows:
   nightly:
     triggers:
@@ -20,6 +27,7 @@ workflows:
           no-workspace: true
 
   build:
+    unless: << pipeline.parameters.GREP_TAGS >>
     jobs:
       - cypress/run:
           name: Run changed tests
