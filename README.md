@@ -24,6 +24,7 @@ npm run cypress
 6. `05-types` adds TypeScript [model interface](cypress/integration/model.d.ts) so our tests know the app actions [they can trigger](cypress/integration/utils.js)
 7. `06-split` splits all tests into multiple spec files.
 8. `07-grep` added tags and the [cypress-grep](https://github.com/cypress-io/cypress-grep) plugin.
+9. `08-tags` tags the features and creates the ways to run CircleCI and GitHub Actions by selecting the tags to run.
 
 ## Tests
 
