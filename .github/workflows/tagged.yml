@@ -42,8 +42,8 @@ jobs:
           EVENT: ${{ toJson(github.event.inputs) }}
         run: echo "$EVENT"
 
-      # - name: Checkout 🛎
-      #   uses: actions/checkout@v2
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
 
       # install dependencies and start the server
       # https://github.com/cypress-io/github-action
