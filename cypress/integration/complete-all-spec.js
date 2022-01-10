@@ -33,14 +33,18 @@ describe('TodoMVC', function () {
       allItems().eq(2).should('have.class', 'completed')
     })
 
-    it('should allow me to clear the complete state of all items', function () {
-      // check and then immediately uncheck
-      cy.get(TOGGLE_ALL).check().uncheck()
+    it(
+      'should allow me to clear the complete state of all items',
+      { tags: '@sanity' },
+      function () {
+        // check and then immediately uncheck
+        cy.get(TOGGLE_ALL).check().uncheck()
 
-      allItems().eq(0).should('not.have.class', 'completed')
-      allItems().eq(1).should('not.have.class', 'completed')
-      allItems().eq(2).should('not.have.class', 'completed')
-    })
+        allItems().eq(0).should('not.have.class', 'completed')
+        allItems().eq(1).should('not.have.class', 'completed')
+        allItems().eq(2).should('not.have.class', 'completed')
+      },
+    )
 
     it('complete all checkbox should update state when items are completed / cleared', () => {
       // alias the .toggle-all for reuse later

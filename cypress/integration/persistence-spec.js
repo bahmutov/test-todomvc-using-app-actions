@@ -30,7 +30,7 @@ describe('TodoMVC', function () {
         .and('not.have.class', 'completed')
     }
 
-    it('should persist its data', function () {
+    it('should persist its data', { tags: '@sanity' }, function () {
       addTodos(TODO_ITEM_ONE, TODO_ITEM_TWO)
       toggle(0).then(testState).reload().then(testState)
     })

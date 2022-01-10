@@ -31,7 +31,7 @@ describe('TodoMVC', function () {
       allItems().eq(1).find('label').should('contain', TODO_ITEM_TWO)
     })
 
-    it('adds items', function () {
+    it('adds items', { tags: '@sanity' }, function () {
       // create several todos then check the number of items in the list
       cy.get(NEW_TODO)
         .type('todo A{enter}')

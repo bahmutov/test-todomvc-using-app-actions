@@ -18,21 +18,25 @@ describe('TodoMVC', function () {
   })
 
   context('Item', { tags: '@item' }, function () {
-    it('should allow me to mark items as complete', function () {
-      addTodos(TODO_ITEM_ONE, TODO_ITEM_TWO)
+    it(
+      'should allow me to mark items as complete',
+      { tags: '@sanity' },
+      function () {
+        addTodos(TODO_ITEM_ONE, TODO_ITEM_TWO)
 
-      allItems().eq(0).as('firstTodo')
-      allItems().eq(1).as('secondTodo')
+        allItems().eq(0).as('firstTodo')
+        allItems().eq(1).as('secondTodo')
 
-      cy.get('@firstTodo').find('.toggle').check()
-      cy.get('@firstTodo').should('have.class', 'completed')
+        cy.get('@firstTodo').find('.toggle').check()
+        cy.get('@firstTodo').should('have.class', 'completed')
 
-      cy.get('@secondTodo').should('not.have.class', 'completed')
-      cy.get('@secondTodo').find('.toggle').check()
+        cy.get('@secondTodo').should('not.have.class', 'completed')
+        cy.get('@secondTodo').find('.toggle').check()
 
-      cy.get('@firstTodo').should('have.class', 'completed')
-      cy.get('@secondTodo').should('have.class', 'completed')
-    })
+        cy.get('@firstTodo').should('have.class', 'completed')
+        cy.get('@secondTodo').should('have.class', 'completed')
+      },
+    )
 
     it('should allow me to un-mark items as complete', function () {
       addTodos(TODO_ITEM_ONE, TODO_ITEM_TWO)
