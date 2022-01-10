@@ -1,0 +1,21 @@
+name: tagged
+on:
+  workflow_dispatch:
+    inputs:
+      sanity:
+        description: Run the tests tagged "@sanity"
+        required: false
+        type: boolean
+jobs:
+  tagged:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Run filtered tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=${{ github.event.inputs.sanity ? '@sanity' : '' }}
