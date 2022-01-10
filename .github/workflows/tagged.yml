@@ -42,85 +42,69 @@ jobs:
           EVENT: ${{ toJson(github.event.inputs) }}
         run: echo "$EVENT"
 
-      - name: Run if sanity true
-        if: ${{ github.event.inputs.sanity }}
-        run: echo "It is true"
-
-      - name: Run if sanity string true
-        if: ${{ github.event.inputs.sanity == 'true' }}
-        run: echo "It is string true"
-
-      - name: Run if sanity false
-        if: ${{ !github.event.inputs.sanity }}
-        run: echo "It is false"
-
-      - name: Run if sanity string false
-        if: ${{ github.event.inputs.sanity == 'false'}}
-        run: echo "It is string false"
-
       # - name: Checkout 🛎
       #   uses: actions/checkout@v2
 
-      # # install dependencies and start the server
-      # # https://github.com/cypress-io/github-action
-      # - name: Install dependencies 📦
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     runTests: false
+      # install dependencies and start the server
+      # https://github.com/cypress-io/github-action
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
 
-      # - name: Start the server 🚀
-      #   run: npm start &
+      - name: Start the server 🚀
+        run: npm start &
 
-      # # unfortunately, because GitHub Actions expressions
-      # # are limited, I could not come up with a better way
-      # # to map boolean values to the tag strings
+      # unfortunately, because GitHub Actions expressions
+      # are limited, I could not come up with a better way
+      # to map boolean values to the tag strings
 
-      # # https://github.com/cypress-io/github-action
-      # - name: Run sanity tests
-      #   if: ${{ github.event.inputs.sanity }}
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     install: false
-      #     env: grepTags=@sanity
+      # https://github.com/cypress-io/github-action
+      - name: Run sanity tests
+        if: ${{ github.event.inputs.sanity == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@sanity
 
-      # - name: Run adding tests
-      #   if: ${{ github.event.inputs.adding }}
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     install: false
-      #     env: grepTags=@adding
+      - name: Run adding tests
+        if: ${{ github.event.inputs.adding == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@adding
 
-      # - name: Run complete tests
-      #   if: ${{ github.event.inputs.complete }}
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     install: false
-      #     env: grepTags=@complete
+      - name: Run complete tests
+        if: ${{ github.event.inputs.complete == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@complete
 
-      # - name: Run editing tests
-      #   if: ${{ github.event.inputs.editing }}
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     install: false
-      #     env: grepTags=@editing
+      - name: Run editing tests
+        if: ${{ github.event.inputs.editing == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@editing
 
-      # - name: Run item tests
-      #   if: ${{ github.event.inputs.item }}
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     install: false
-      #     env: grepTags=@item
+      - name: Run item tests
+        if: ${{ github.event.inputs.item == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@item
 
-      # - name: Run persistence tests
-      #   if: ${{ github.event.inputs.persistence }}
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     install: false
-      #     env: grepTags=@persistence
+      - name: Run persistence tests
+        if: ${{ github.event.inputs.persistence == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@persistence
 
-      # - name: Run routing tests
-      #   if: ${{ github.event.inputs.routing }}
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     install: false
-      #     env: grepTags=@routing
+      - name: Run routing tests
+        if: ${{ github.event.inputs.routing == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@routing
