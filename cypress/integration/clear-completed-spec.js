@@ -18,7 +18,7 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('Clear completed button', function () {
+  context('Clear completed button', { tags: '@complete' }, function () {
     const CLEAR_COMPLETED = '.clear-completed'
 
     beforeEach(addDefaultTodos)

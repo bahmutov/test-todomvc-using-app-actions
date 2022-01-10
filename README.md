@@ -22,7 +22,8 @@ npm run cypress
 4. `03-page-object` drives app via page object [todo.page.js](cypress/integration/todo.page.js)
 5. `04-app-actions` controls application by mostly directly calling the [model instance](js/todoModel.js) directly to avoid always going through the page.
 6. `05-types` adds TypeScript [model interface](cypress/integration/model.d.ts) so our tests know the app actions [they can trigger](cypress/integration/utils.js)
-7. `06-split` splits all tests into multiple spec files
+7. `06-split` splits all tests into multiple spec files.
+8. `07-grep` added tags and the [cypress-grep](https://github.com/cypress-io/cypress-grep) plugin.
 
 ## Tests
 

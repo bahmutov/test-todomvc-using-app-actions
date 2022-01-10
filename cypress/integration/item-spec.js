@@ -17,7 +17,7 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('Item', function () {
+  context('Item', { tags: '@item' }, function () {
     it('should allow me to mark items as complete', function () {
       addTodos(TODO_ITEM_ONE, TODO_ITEM_TWO)
 

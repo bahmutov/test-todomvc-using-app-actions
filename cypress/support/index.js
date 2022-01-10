@@ -13,4 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+// https://github.com/cypress-io/cypress-grep
+require('cypress-grep')()
+
 require('cypress-watch-and-reload/support')

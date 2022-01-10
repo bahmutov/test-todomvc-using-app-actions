@@ -10,7 +10,7 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('Mark all as completed', function () {
+  context('Mark all as completed', { tags: '@complete' }, function () {
     // These tests confirm that we can click one toggle button, and the app
     // marks all items as completed or incomplete again.
 

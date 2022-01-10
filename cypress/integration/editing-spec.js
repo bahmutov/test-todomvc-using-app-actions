@@ -16,7 +16,7 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('Editing', function () {
+  context('Editing', { tags: '@editing' }, function () {
     beforeEach(addDefaultTodos)
 
     it('should hide other controls when editing', function () {

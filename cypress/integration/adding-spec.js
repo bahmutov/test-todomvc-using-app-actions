@@ -17,7 +17,7 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('New Todo', function () {
+  context('New Todo', { tags: '@adding' }, function () {
     // These tests confirm that add new Todo items works.
     // All tests go through the DOM and events just like a real user would.
 

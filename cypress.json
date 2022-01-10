@@ -1,11 +1,11 @@
 {
   "baseUrl": "http://localhost:8888",
-  "ignoreTestFiles": [
-    "*.page.js",
-    "utils.js",
-    "*.d.ts"
-  ],
+  "ignoreTestFiles": ["*.page.js", "utils.js", "*.d.ts"],
   "cypress-watch-and-reload": {
     "watch": "js/*"
+  },
+  "env": {
+    "grepFilterSpecs": true,
+    "grepOmitFiltered": true
   }
 }

@@ -15,4 +15,10 @@ require('cypress-watch-and-reload/plugins')
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+
+  // https://github.com/cypress-io/cypress-grep
+  require('cypress-grep/src/plugin')(config)
+  // make sure to return the config object
+  // as it might have been modified by the plugin
+  return config
 }

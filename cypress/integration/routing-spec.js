@@ -18,7 +18,7 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('Routing', function () {
+  context('Routing', { tags: '@routing' }, function () {
     /**
      * Little utility function to click on a given filter on the page.
      * We are testing routing links, so these tests go through the DOM.

@@ -16,7 +16,7 @@ describe('TodoMVC', function () {
     cy.visit('/')
   })
 
-  context('Persistence', function () {
+  context('Persistence', { tags: '@persistence' }, function () {
     // mimicking TodoMVC tests
     // by writing out this function
     function testState() {
