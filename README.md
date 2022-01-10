@@ -31,6 +31,11 @@ npm run cypress
 
 All tests are in folder [cypress/integration](cypress/integration). Common test settings are in [cypress.json](cypress.json) file.
 
+## Blog posts
+
+- [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
+- [How To Tag And Run End-to-End Tests](https://glebbahmutov.com/blog/tag-tests/)
+
 ## IntelliSense
 
 In the application code [js/app.jsx](js/app.jsx) we set `window.model = ...` to expose our model instance for app actions to work. If we use TypeScript check via `// @ts-check` directive, we need to "tell" TS compiler that there is a new property `model` on the global `window` object. We can do this by writing file [cypress/integration/model.d.ts](cypress/integration/model.d.ts) with interface definition for `TodoModel` and `window` update. Something like this
