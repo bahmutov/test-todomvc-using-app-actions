@@ -1,5 +1,5 @@
 # separate running each grep tag into own job
-name: tagged-jos
+name: tagged-jobs
 on:
   workflow_dispatch:
     inputs:
@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v2
 
       # https://github.com/cypress-io/github-action
-      - name: Install dependencies 📦
+      - name: Run sanity tests
         uses: cypress-io/github-action@v2
         with:
           start: npm start
@@ -59,7 +59,7 @@ jobs:
         uses: actions/checkout@v2
 
       # https://github.com/cypress-io/github-action
-      - name: Install dependencies 📦
+      - name: Run adding tests
         uses: cypress-io/github-action@v2
         with:
           start: npm start
@@ -73,7 +73,7 @@ jobs:
         uses: actions/checkout@v2
 
       # https://github.com/cypress-io/github-action
-      - name: Install dependencies 📦
+      - name: Run complete tests
         uses: cypress-io/github-action@v2
         with:
           start: npm start
@@ -87,7 +87,7 @@ jobs:
         uses: actions/checkout@v2
 
       # https://github.com/cypress-io/github-action
-      - name: Install dependencies 📦
+      - name: Run editing tests
         uses: cypress-io/github-action@v2
         with:
           start: npm start
@@ -101,7 +101,7 @@ jobs:
         uses: actions/checkout@v2
 
       # https://github.com/cypress-io/github-action
-      - name: Install dependencies 📦
+      - name: Run item tests
         uses: cypress-io/github-action@v2
         with:
           start: npm start
@@ -115,7 +115,7 @@ jobs:
         uses: actions/checkout@v2
 
       # https://github.com/cypress-io/github-action
-      - name: Install dependencies 📦
+      - name: Run persistence tests
         uses: cypress-io/github-action@v2
         with:
           start: npm start
@@ -129,7 +129,7 @@ jobs:
         uses: actions/checkout@v2
 
       # https://github.com/cypress-io/github-action
-      - name: Install dependencies 📦
+      - name: Run routing tests
         uses: cypress-io/github-action@v2
         with:
           start: npm start
