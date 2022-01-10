@@ -6,5 +6,31 @@ workflows:
   build:
     jobs:
       - cypress/run:
+          name: Run changed tests
+          # only run this job if on some other branch
+          filters:
+            branches:
+              ignore:
+                - master
+          command: |
+            # be careful about counting the lines
+            specsLines=$(git diff --name-only --diff-filter=AMR origin/master | { grep cypress/integration || true; })
+            n=$(echo $specsLines | sed '/^\s*$/d' | wc -l | tr -d ' ')
+            specs=$(echo $specsLines | sed '/^\s*$/d' | tr '\n' ',')
+            echo ""
+            echo "Changed and added ${n} Cypress specs"
+            echo ${specs}
+            echo ""
+            if [ ${n} -lt 1 ]; then
+              echo "No Cypress specs changed, exiting..."
+              exit 0
+            fi
+            # we have to form the Cypress run command ourselves
+            npx cypress run --spec ${specs}
+
+      - cypress/run:
+          name: Run all tests
+          requires:
+            - Run changed tests
           build: npm run print
           start: npm start
