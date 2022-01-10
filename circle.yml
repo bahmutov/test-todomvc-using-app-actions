@@ -6,9 +6,9 @@ orbs:
 parameters:
   GREP_TAGS:
     type: enum
-    enum:
-      [
+    enum: [
         '',
+        # a single main test for each feature
         '@sanity',
         '@adding',
         '@complete',
@@ -16,6 +16,8 @@ parameters:
         '@item',
         '@persistence',
         '@routing',
+        # a superset of @sanity tests
+        '@regression',
       ]
     default: ''
 

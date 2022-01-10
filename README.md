@@ -25,6 +25,7 @@ npm run cypress
 7. `06-split` splits all tests into multiple spec files.
 8. `07-grep` added tags and the [cypress-grep](https://github.com/cypress-io/cypress-grep) plugin.
 9. `08-tags` tags the features and creates the ways to run CircleCI and GitHub Actions by selecting the tags to run.
+10. `09-regression` tags some tests as `@regression` and updates the CI workflows.
 
 ## Tests
 

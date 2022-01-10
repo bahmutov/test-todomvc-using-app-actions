@@ -9,6 +9,10 @@ on:
         description: Run the tests tagged "@sanity"
         required: false
         type: boolean
+      regression:
+        description: Run the tests tagged "@regression"
+        required: false
+        type: boolean
       adding:
         description: Run the tests tagged "@adding"
         required: false
@@ -134,3 +138,17 @@ jobs:
         with:
           start: npm start
           env: grepTags=@routing
+
+  regression:
+    if: ${{ github.event.inputs.regression == 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Run regression tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grepTags=@regression
