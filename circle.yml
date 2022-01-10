@@ -7,12 +7,13 @@ workflows:
     jobs:
       - cypress/run:
           name: Run changed tests
-          # only run this job if on some other branch
-          filters:
-            branches:
-              ignore:
-                - master
           command: |
+            # stop if on master branch - all tests should run there
+            if [ "$CIRCLE_BRANCH" = "master" ]; then
+              echo "Default branch, will run all tests"
+              exit 0
+            fi
+
             # be careful about counting the lines
             specsLines=$(git diff --name-only --diff-filter=AMR origin/master | { grep cypress/integration || true; })
             n=$(echo $specsLines | sed '/^\s*$/d' | wc -l | tr -d ' ')
