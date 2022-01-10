@@ -47,7 +47,7 @@ jobs:
         run: echo "It is true"
 
       - name: Run if sanity string true
-        if: ${{ github.event.inputs.sanity == "true"}}
+        if: ${{ github.event.inputs.sanity == 'true' }}
         run: echo "It is string true"
 
       - name: Run if sanity false
@@ -55,7 +55,7 @@ jobs:
         run: echo "It is false"
 
       - name: Run if sanity string false
-        if: ${{ github.event.inputs.sanity == "false"}}
+        if: ${{ github.event.inputs.sanity == 'false'}}
         run: echo "It is string false"
 
       # - name: Checkout 🛎
