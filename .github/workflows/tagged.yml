@@ -40,6 +40,16 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
+      # install dependencies and start the server
+      # https://github.com/cypress-io/github-action
+      - name: Run sanity tests
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+
+      - name: Start the server 🚀
+        run: npm start &
+
       # unfortunately, because GitHub Actions expressions
       # are limited, I could not come up with a better way
       # to map boolean values to the tag strings
@@ -49,47 +59,47 @@ jobs:
         if: ${{ github.event.inputs.sanity }}
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          install: false
           env: grepTags=@sanity
 
       - name: Run adding tests
         if: ${{ github.event.inputs.adding }}
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          install: false
           env: grepTags=@adding
 
       - name: Run complete tests
         if: ${{ github.event.inputs.complete }}
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          install: false
           env: grepTags=@complete
 
       - name: Run editing tests
         if: ${{ github.event.inputs.editing }}
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          install: false
           env: grepTags=@editing
 
       - name: Run item tests
         if: ${{ github.event.inputs.item }}
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          install: false
           env: grepTags=@item
 
       - name: Run persistence tests
         if: ${{ github.event.inputs.persistence }}
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          install: false
           env: grepTags=@persistence
 
       - name: Run routing tests
         if: ${{ github.event.inputs.routing }}
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          install: false
           env: grepTags=@routing
