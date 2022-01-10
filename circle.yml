@@ -35,6 +35,6 @@ workflows:
           name: Run all tests
           requires:
             - Run changed tests
-          build: npm run print
+          build: npm run print-tests
           start: npm start
           no-workspace: true
