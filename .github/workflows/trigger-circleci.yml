@@ -46,4 +46,6 @@ jobs:
           EVENT: ${{ toJson(github.event.inputs) }}
         run: |
           echo "$EVENT"
-          echo "branch is ${{ github.event.head_branch }}"
+          # all environment variables that start with GITHUB_
+          # https://github.com/bahmutov/print-env
+          npx print-env GITHUB_
