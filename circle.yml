@@ -5,20 +5,13 @@ orbs:
 
 parameters:
   GREP_TAGS:
-    type: enum
-    enum: [
-        '',
-        # a single main test for each feature
-        '@sanity',
-        '@adding',
-        '@complete',
-        '@editing',
-        '@item',
-        '@persistence',
-        '@routing',
-        # a superset of @sanity tests
-        '@regression',
-      ]
+    # tag can be an individual tag like
+    # @sanity, @adding, @complete, @editing, @item, @persistence
+    # @routing, @regression
+    # or a combination of tags like "@adding @item" (OR)
+    # "@editing+@item" (AND)
+    # see https://github.com/cypress-io/cypress-grep
+    type: string
     default: ''
   MACHINES:
     description: The number of parallel machines to use
