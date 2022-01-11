@@ -48,4 +48,22 @@ jobs:
           echo "$EVENT"
           # all environment variables that start with GITHUB_
           # https://github.com/bahmutov/print-env
-          npx @bahmutov/print-env GITHUB_
+          npx @bahmutov/print-env
+
+      - name: Trigger CircleCI run
+        run: |
+          # collect all input parameters into one string
+          TAGS=
+          if [[ "${{ github.event.inputs.sanity }}" == "true" ]]; then
+            TAGS="@sanity"
+          fi
+          if [[ "${{ github.event.inputs.regression }}" == "true" ]]; then
+            TAGS="$TAGS @regression"
+          fi
+          if [[ "${{ github.event.inputs.adding }}" == "true" ]]; then
+            TAGS="$TAGS @adding"
+          fi
+          if [[ "${{ github.event.inputs.complete }}" == "true" ]]; then
+            TAGS="$TAGS @complete"
+          fi
+          echo "Collected tags: $TAGS"
