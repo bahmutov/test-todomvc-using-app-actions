@@ -36,6 +36,11 @@ on:
         description: Run the tests tagged "@routing"
         required: false
         type: boolean
+      machines:
+        description: Number of machines to use
+        required: false
+        type: integer
+        default: 1
 
 jobs:
   trigger-circleci:
@@ -80,7 +85,10 @@ jobs:
           if [[ "${{ github.event.inputs.routing }}" == "true" ]]; then
             TAGS="$TAGS @routing"
           fi
+
           echo "Collected tags: $TAGS"
+          echo "Number of machines: ${{ github.event.inputs.machines }}"
+
           # https://github.com/bahmutov/trigger-circleci-pipeline
           npx trigger-circleci-pipeline \
             --org bahmutov --project test-todomvc-using-app-actions \
