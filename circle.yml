@@ -43,7 +43,7 @@ workflows:
           build: npm run print-tests
           start: npm start
           no-workspace: true
-          env: grepTags=<< pipeline.parameters.GREP_TAGS >>
+          env: grepTags='<< pipeline.parameters.GREP_TAGS >>'
 
   build:
     unless: << pipeline.parameters.GREP_TAGS >>
