@@ -20,6 +20,10 @@ parameters:
         '@regression',
       ]
     default: ''
+  MACHINES:
+    description: The number of parallel machines to use
+    type: string
+    default: 1
 
 workflows:
   nightly:

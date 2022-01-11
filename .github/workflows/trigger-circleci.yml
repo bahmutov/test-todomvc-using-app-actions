@@ -1,0 +1,49 @@
+name: trigger-circleci
+on:
+  workflow_dispatch:
+    inputs:
+      # these inputs will be shown to the user on GitHub Actions page
+      # and the user can simply check off the tags to run
+      sanity:
+        description: Run the tests tagged "@sanity"
+        required: false
+        type: boolean
+      regression:
+        description: Run the tests tagged "@regression"
+        required: false
+        type: boolean
+      adding:
+        description: Run the tests tagged "@adding"
+        required: false
+        type: boolean
+      complete:
+        description: Run the tests tagged "@complete"
+        required: false
+        type: boolean
+      editing:
+        description: Run the tests tagged "@editing"
+        required: false
+        type: boolean
+      item:
+        description: Run the tests tagged "@item"
+        required: false
+        type: boolean
+      persistence:
+        description: Run the tests tagged "@persistence"
+        required: false
+        type: boolean
+      routing:
+        description: Run the tests tagged "@routing"
+        required: false
+        type: boolean
+
+jobs:
+  trigger-circleci:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print GitHub event inputs
+        env:
+          EVENT: ${{ toJson(github.event.inputs) }}
+        run: |
+          echo "$EVENT"
+          echo "branch is ${{ github.event.head_branch }}"
