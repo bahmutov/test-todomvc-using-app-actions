@@ -58,6 +58,8 @@ jobs:
       - name: Trigger CircleCI run
         env:
           CIRCLE_CI_API_TOKEN: ${{ secrets.CIRCLE_CI_API_TOKEN }}
+          # show parsed parameters when triggering the CircleCI pipeline
+          DEBUG: trigger-circleci-pipeline
         run: |
           # collect all input parameters into one string
           TAGS=
@@ -90,7 +92,7 @@ jobs:
           echo "Number of machines: ${{ github.event.inputs.machines }}"
 
           # https://github.com/bahmutov/trigger-circleci-pipeline
-          npx trigger-circleci-pipeline \
+          npx trigger-circleci-pipeline@1.7.0 \
             --org bahmutov --project test-todomvc-using-app-actions \
             --branch $GITHUB_REF_NAME \
             --parameters GREP_TAGS="$TAGS",MACHINES=${{ github.event.inputs.machines }}
