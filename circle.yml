@@ -22,7 +22,7 @@ parameters:
     default: ''
   MACHINES:
     description: The number of parallel machines to use
-    type: string
+    type: integer
     default: 1
 
 workflows:
