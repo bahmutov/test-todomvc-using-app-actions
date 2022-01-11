@@ -48,9 +48,11 @@ jobs:
           echo "$EVENT"
           # all environment variables that start with GITHUB_
           # https://github.com/bahmutov/print-env
-          npx @bahmutov/print-env
+          npx @bahmutov/print-env GITHUB_
 
       - name: Trigger CircleCI run
+        env:
+          CIRCLE_CI_API_TOKEN: ${{ secrets.CIRCLE_CI_API_TOKEN }}
         run: |
           # collect all input parameters into one string
           TAGS=
@@ -66,4 +68,20 @@ jobs:
           if [[ "${{ github.event.inputs.complete }}" == "true" ]]; then
             TAGS="$TAGS @complete"
           fi
+          if [[ "${{ github.event.inputs.editing }}" == "true" ]]; then
+            TAGS="$TAGS @editing"
+          fi
+          if [[ "${{ github.event.inputs.item }}" == "true" ]]; then
+            TAGS="$TAGS @item"
+          fi
+          if [[ "${{ github.event.inputs.persistence }}" == "true" ]]; then
+            TAGS="$TAGS @persistence"
+          fi
+          if [[ "${{ github.event.inputs.routing }}" == "true" ]]; then
+            TAGS="$TAGS @routing"
+          fi
           echo "Collected tags: $TAGS"
+          # https://github.com/bahmutov/trigger-circleci-pipeline
+          npx trigger-circleci-pipeline \
+            --org bahmutov --project test-todomvc-using-app-actions \
+            --branch $GITHUB_REF_NAME --parameters GREP_TAGS="$TAGS"
