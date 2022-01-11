@@ -48,4 +48,4 @@ jobs:
           echo "$EVENT"
           # all environment variables that start with GITHUB_
           # https://github.com/bahmutov/print-env
-          npx print-env GITHUB_
+          npx @bahmutov/print-env GITHUB_
