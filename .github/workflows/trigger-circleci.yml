@@ -92,7 +92,7 @@ jobs:
           echo "Number of machines: ${{ github.event.inputs.machines }}"
 
           # https://github.com/bahmutov/trigger-circleci-pipeline
-          npx trigger-circleci-pipeline@1.8.0 \
+          npx trigger-circleci-pipeline@1.8.1 \
             --org bahmutov --project test-todomvc-using-app-actions \
             --branch $GITHUB_REF_NAME \
-            --parameters GREP_TAGS="$TAGS",MACHINES=${{ github.event.inputs.machines }}
+            --parameters GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }}
