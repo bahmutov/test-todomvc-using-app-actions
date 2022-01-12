@@ -81,7 +81,7 @@ workflows:
               exit 0
             fi
             # we have to form the Cypress run command ourselves
-            npx cypress run --spec ${specs}
+            npx cypress run --spec ${specs} --record --group "1. changed specs"
 
       - cypress/run:
           name: Run sanity tests
@@ -91,3 +91,4 @@ workflows:
           start: npm start
           no-workspace: true
           env: grepTags=@sanity
+          group: '2. all sanity specs'
