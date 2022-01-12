@@ -91,4 +91,5 @@ workflows:
           start: npm start
           no-workspace: true
           env: grepTags=@sanity
+          record: true
           group: '2. all sanity specs'
