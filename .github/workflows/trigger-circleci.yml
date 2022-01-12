@@ -36,6 +36,10 @@ on:
         description: Run the tests tagged "@routing"
         required: false
         type: boolean
+      recordedRunTag:
+        description: Cypress Dashboard run tag
+        required: false
+        type: string
       machines:
         description: Number of machines to use
         required: false
@@ -95,4 +99,4 @@ jobs:
           npx trigger-circleci-pipeline@1.8.1 \
             --org bahmutov --project test-todomvc-using-app-actions \
             --branch $GITHUB_REF_NAME \
-            --parameters GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }}
+            --parameters GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\"${{ github.event.inputs.recordedRunTag}}\"

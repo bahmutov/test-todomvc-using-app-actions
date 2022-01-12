@@ -13,6 +13,10 @@ parameters:
     # see https://github.com/cypress-io/cypress-grep
     type: string
     default: ''
+  RECORDED_RUN_TAG:
+    description: Optional tag to put on the recorded Cypress Dashboard run
+    type: string
+    default: ''
   MACHINES:
     description: The number of parallel machines to use
     type: integer
@@ -54,8 +58,8 @@ workflows:
           start: npm start
           no-workspace: true
           record: true
-          # comma-separated tags will be split into individual tags
-          tags: '<< pipeline.parameters.GREP_TAGS >>'
+          # comma-separated tags will be split into individual tags on the Cypress Dashboard
+          tags: '<< pipeline.parameters.GREP_TAGS >>,<< pipeline.parameters.RECORDED_RUN_TAG >>'
           group: 'Tagged tests'
 
   build:
