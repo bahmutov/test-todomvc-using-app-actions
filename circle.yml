@@ -37,13 +37,13 @@ workflows:
 
   tagged:
     when: << pipeline.parameters.GREP_TAGS >>
-    environment:
-      # because the tags might have commas, standard Cypress CLI
-      # can choke parsing --env grepTags=... arguments
-      # thus pass possible tags using an environment variable
-      CYPRESS_grepTags: << pipeline.parameters.GREP_TAGS >>
     jobs:
       - cypress/run:
+          # because the tags might have commas, standard Cypress CLI
+          # can choke parsing --env grepTags=... arguments
+          # thus pass possible tags using an environment variable
+          pre-steps:
+            - run: export CYPRESS_grepTags=<< pipeline.parameters.GREP_TAGS >>
           name: Run tagged tests
           build: npm run print-tests
           start: npm start
