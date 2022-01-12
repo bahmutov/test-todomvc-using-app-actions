@@ -59,6 +59,10 @@ jobs:
           # https://github.com/bahmutov/print-env
           npx @bahmutov/print-env GITHUB_
 
+      # temporary, just to print args
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
       - name: Trigger CircleCI run
         env:
           CIRCLE_CI_API_TOKEN: ${{ secrets.CIRCLE_CI_API_TOKEN }}
