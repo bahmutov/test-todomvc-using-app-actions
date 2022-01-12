@@ -96,7 +96,7 @@ jobs:
           echo "Number of machines: ${{ github.event.inputs.machines }}"
           echo "Optional dashboard run tag: ${{ github.event.inputs.recordedRunTag }}"
 
-          export RUN_TAG=${{ github.event.inputs.recordedRunTag }}
+          export RUN_TAG="${{ github.event.inputs.recordedRunTag }}"
           echo "Run tag is: ${RUN_TAG}"
 
           # https://github.com/bahmutov/trigger-circleci-pipeline
