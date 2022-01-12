@@ -37,7 +37,7 @@ workflows:
 
   tagged:
     when: << pipeline.parameters.GREP_TAGS >>
-    env:
+    environment:
       # because the tags might have commas, standard Cypress CLI
       # can choke parsing --env grepTags=... arguments
       # thus pass possible tags using an environment variable
