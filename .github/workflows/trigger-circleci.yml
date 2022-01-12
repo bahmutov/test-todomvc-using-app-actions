@@ -99,5 +99,5 @@ jobs:
           # https://github.com/bahmutov/trigger-circleci-pipeline
           npx trigger-circleci-pipeline@1.9.1 --dry \
             --org bahmutov --project test-todomvc-using-app-actions \
-            --parameters GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\"${{ github.event.inputs.recordedRunTag }}\" \
+            --parameters MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\"${{ github.event.inputs.recordedRunTag }}\",GREP_TAGS=\"$TAGS\" \
             --branch $GITHUB_REF_NAME
