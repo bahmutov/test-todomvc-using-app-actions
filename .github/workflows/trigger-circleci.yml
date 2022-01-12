@@ -100,4 +100,4 @@ jobs:
           npx trigger-circleci-pipeline@1.9.0 --dry \
             --org bahmutov --project test-todomvc-using-app-actions \
             --branch $GITHUB_REF_NAME \
-            --parameters GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\'${{ github.event.inputs.recordedRunTag }}\'
+            --parameters \'GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\"${{ github.event.inputs.recordedRunTag }}\"\'
