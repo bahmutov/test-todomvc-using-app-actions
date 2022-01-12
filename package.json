@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "cypress": "9.2.1",
-    "cypress-grep": "2.12.2",
+    "cypress-grep": "2.13.0",
     "cypress-watch-and-reload": "1.4.3",
     "find-cypress-specs": "1.4.0",
     "prettier": "2.5.1",
