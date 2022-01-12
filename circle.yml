@@ -53,6 +53,10 @@ workflows:
           build: npm run print-tests
           start: npm start
           no-workspace: true
+          record: true
+          # comma-separated tags will be split into individual tags
+          tags: '<< pipeline.parameters.GREP_TAGS >>'
+          group: 'Tagged tests'
 
   build:
     unless: << pipeline.parameters.GREP_TAGS >>
