@@ -94,9 +94,10 @@ jobs:
 
           echo "Collected tags: $TAGS"
           echo "Number of machines: ${{ github.event.inputs.machines }}"
+          echo "Optional dashboard run tag: ${{ github.event.inputs.recordedRunTag }}"
 
           # https://github.com/bahmutov/trigger-circleci-pipeline
-          npx trigger-circleci-pipeline@1.8.1 \
+          npx trigger-circleci-pipeline@1.9.0 --dry \
             --org bahmutov --project test-todomvc-using-app-actions \
             --branch $GITHUB_REF_NAME \
-            --parameters GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\"${{ github.event.inputs.recordedRunTag}}\"
+            --parameters GREP_TAGS=\"$TAGS\",MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\'${{ github.event.inputs.recordedRunTag }}\'
