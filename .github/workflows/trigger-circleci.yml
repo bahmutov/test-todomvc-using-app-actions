@@ -59,10 +59,6 @@ jobs:
           # https://github.com/bahmutov/print-env
           npx @bahmutov/print-env GITHUB_
 
-      # temporary, just to print args
-      - name: Checkout 🛎
-        uses: actions/checkout@v2
-
       - name: Trigger CircleCI run
         env:
           CIRCLE_CI_API_TOKEN: ${{ secrets.CIRCLE_CI_API_TOKEN }}
@@ -99,14 +95,13 @@ jobs:
           echo "Collected tags: $TAGS"
           echo "Number of machines: ${{ github.event.inputs.machines }}"
           echo "Optional dashboard run tag: ${{ github.event.inputs.recordedRunTag }}"
-
-          # export RUN_TAG="${{ github.event.inputs.recordedRunTag }}"
-          export RUN_TAG="one two three"
-          echo "Run tag is: ${RUN_TAG}"
-          node ./print-args --parameters "${RUN_TAG}"
+          # using an environment variable makes it shorter in the next step
+          export RUN_TAG="${{ github.event.inputs.recordedRunTag }}"
 
           # https://github.com/bahmutov/trigger-circleci-pipeline
-          npx trigger-circleci-pipeline@1.9.1 --dry \
+          # note that we need to quote the entire parameters string
+          # and escape quotes for individual parts that can have spaces in them
+          npx trigger-circleci-pipeline@1.9.1 \
             --org bahmutov --project test-todomvc-using-app-actions \
             --parameters "MACHINES=${{ github.event.inputs.machines }},RECORDED_RUN_TAG=\"${RUN_TAG}\",GREP_TAGS=\"${TAGS}\"" \
             --branch $GITHUB_REF_NAME
