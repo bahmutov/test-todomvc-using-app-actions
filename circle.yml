@@ -52,7 +52,7 @@ workflows:
           pre-steps:
             - run:
                 name: Set any grepTags
-                command: echo 'export CYPRESS_grepTags=<< pipeline.parameters.GREP_TAGS >>' >> $BASH_ENV
+                command: echo 'export CYPRESS_grepTags="<< pipeline.parameters.GREP_TAGS >>"' >> $BASH_ENV
           name: Run tagged tests
           build: npm run print-tests
           start: npm start
