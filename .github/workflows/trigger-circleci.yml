@@ -67,32 +67,32 @@ jobs:
             TAGS="@sanity"
           fi
           if [[ "${{ github.event.inputs.regression }}" == "true" ]]; then
-            TAGS="$TAGS @regression"
+            TAGS="$TAGS,@regression"
           fi
           if [[ "${{ github.event.inputs.adding }}" == "true" ]]; then
-            TAGS="$TAGS @adding"
+            TAGS="$TAGS,@adding"
           fi
           if [[ "${{ github.event.inputs.complete }}" == "true" ]]; then
-            TAGS="$TAGS @complete"
+            TAGS="$TAGS,@complete"
           fi
           if [[ "${{ github.event.inputs.editing }}" == "true" ]]; then
-            TAGS="$TAGS @editing"
+            TAGS="$TAGS,@editing"
           fi
           if [[ "${{ github.event.inputs.item }}" == "true" ]]; then
-            TAGS="$TAGS @item"
+            TAGS="$TAGS,@item"
           fi
           if [[ "${{ github.event.inputs.persistence }}" == "true" ]]; then
-            TAGS="$TAGS @persistence"
+            TAGS="$TAGS,@persistence"
           fi
           if [[ "${{ github.event.inputs.routing }}" == "true" ]]; then
-            TAGS="$TAGS @routing"
+            TAGS="$TAGS,@routing"
           fi
 
           echo "Collected tags: $TAGS"
           echo "Number of machines: ${{ github.event.inputs.machines }}"
 
           # https://github.com/bahmutov/trigger-circleci-pipeline
-          npx trigger-circleci-pipeline@1.7.0 \
+          npx trigger-circleci-pipeline@1.8.0 \
             --org bahmutov --project test-todomvc-using-app-actions \
             --branch $GITHUB_REF_NAME \
             --parameters GREP_TAGS="$TAGS",MACHINES=${{ github.event.inputs.machines }}
