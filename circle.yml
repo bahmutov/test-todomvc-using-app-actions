@@ -43,7 +43,9 @@ workflows:
           # can choke parsing --env grepTags=... arguments
           # thus pass possible tags using an environment variable
           pre-steps:
-            - run: export CYPRESS_grepTags=<< pipeline.parameters.GREP_TAGS >>
+            - run:
+                name: Set any grepTags
+                command: echo 'export CYPRESS_grepTags=<< pipeline.parameters.GREP_TAGS >>' >> $BASH_ENV
           name: Run tagged tests
           build: npm run print-tests
           start: npm start
