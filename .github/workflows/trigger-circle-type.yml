@@ -14,31 +14,13 @@ on:
         description: Run the tests tagged "@regression"
         required: false
         type: boolean
-      # tests for individual features
-      adding:
-        description: Run the tests tagged "@adding"
-        required: false
-        type: boolean
-      complete:
-        description: Run the tests tagged "@complete"
-        required: false
-        type: boolean
-      editing:
-        description: Run the tests tagged "@editing"
-        required: false
-        type: boolean
-      item:
-        description: Run the tests tagged "@item"
-        required: false
-        type: boolean
-      persistence:
-        description: Run the tests tagged "@persistence"
-        required: false
-        type: boolean
-      routing:
-        description: Run the tests tagged "@routing"
-        required: false
-        type: boolean
+      # tests for individual features - the user will need to type the tags
+      # comma-separated in order to avoid hitting then ten workflow input limit
+      testTags:
+        description: |
+          Other test tags to run, comma-separated. Includes @adding, @complete,
+          @editing, @item, @persistence, @routing
+      # a few other utility params
       recordedRunTag:
         description: Cypress Dashboard run tag
         required: false
@@ -76,23 +58,8 @@ jobs:
           if [[ "${{ github.event.inputs.regression }}" == "true" ]]; then
             TAGS="$TAGS,@regression"
           fi
-          if [[ "${{ github.event.inputs.adding }}" == "true" ]]; then
-            TAGS="$TAGS,@adding"
-          fi
-          if [[ "${{ github.event.inputs.complete }}" == "true" ]]; then
-            TAGS="$TAGS,@complete"
-          fi
-          if [[ "${{ github.event.inputs.editing }}" == "true" ]]; then
-            TAGS="$TAGS,@editing"
-          fi
-          if [[ "${{ github.event.inputs.item }}" == "true" ]]; then
-            TAGS="$TAGS,@item"
-          fi
-          if [[ "${{ github.event.inputs.persistence }}" == "true" ]]; then
-            TAGS="$TAGS,@persistence"
-          fi
-          if [[ "${{ github.event.inputs.routing }}" == "true" ]]; then
-            TAGS="$TAGS,@routing"
+          if [[ "${{ github.event.inputs.testTags }}" != "" ]]; then
+            TAGS="$TAGS,${{ github.event.inputs.testTags }}"
           fi
 
           echo "Collected tags: $TAGS"
