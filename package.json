@@ -8,7 +8,7 @@
     "start": "http-server -p 8888 -c-1",
     "cypress": "cypress open",
     "dev": "start-test 8888 cypress",
-    "print-tests": "find-cypress-specs --names"
+    "print-tests": "find-cypress-specs --names --tags"
   },
   "repository": {
     "type": "git",
