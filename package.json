@@ -6,6 +6,7 @@
   "scripts": {
     "test": "cypress run",
     "start": "http-server -p 8888 -c-1",
+    "start-quiet": "http-server -p 8888 -c-1 --silent",
     "cypress": "cypress open",
     "dev": "start-test 8888 cypress",
     "print-tests": "find-cypress-specs --names --tags"

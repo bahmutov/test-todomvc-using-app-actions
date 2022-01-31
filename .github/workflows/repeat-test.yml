@@ -29,5 +29,5 @@ jobs:
       - name: Run the test N times
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          start: npm run start-quiet
           env: 'grep=${{ github.event.inputs.title }},burn=${{ github.event.inputs.n }}'
