@@ -31,6 +31,15 @@ npm run cypress
 
 All tests are in folder [cypress/integration](cypress/integration). Common test settings are in [cypress.json](cypress.json) file.
 
+## Workflows
+
+This repo shows how to use manual workflows to select the tests to run.
+
+![Starting a test run from GitHub UI](./images/workflows.png)
+
+- [repeat-test.yml](./.github/workflows/repeat-test.yml) lets you run a test N times by entering part of the test's title
+- [repeat-tag.yml](./.github/workflows/repeat-tag.yml) lets you run all tests tagged with specific tag
+
 ## Blog posts
 
 - [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
