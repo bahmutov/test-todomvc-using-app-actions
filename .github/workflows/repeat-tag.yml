@@ -1,0 +1,46 @@
+name: repeat-tag
+on:
+  workflow_dispatch:
+    description: Lets the user run all the tests with specific tag N times
+    inputs:
+      tag:
+        description: |
+          Tag to run, could be @adding, @complete,
+          @editing, @item, @persistence, @regression,
+          @routing, @sanity
+        required: true
+        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
+        type: choice
+        options:
+          - adding
+          - complete
+          - editing
+          - item
+          - persistence
+          - regression
+          - routing
+          - sanity
+      n:
+        description: Number of times to repeat the tests
+        required: false
+        default: 1
+        type: integer
+
+jobs:
+  repeat-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print workflow inputs
+        run: |
+          echo Running the test "${{ github.event.inputs.tag }}"
+          echo for ${{ github.event.inputs.n }} times
+
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Run the tagged test N times
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run start-quiet
+          env: 'grepTags=${{ github.event.inputs.tag }},burn=${{ github.event.inputs.n }}'
