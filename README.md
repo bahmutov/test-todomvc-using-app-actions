@@ -41,6 +41,7 @@ This repo shows how to use manual workflows to select the tests to run.
 
 - [repeat-test.yml](./.github/workflows/repeat-test.yml) lets you run a test N times by entering part of the test's title
 - [repeat-tag.yml](./.github/workflows/repeat-tag.yml) lets you run all tests tagged with specific tag
+- [repeat-spec.yml](./.github/workflows/repeat-spec.yml) lets you repeat the same spec multiple times
 
 ## Blog posts
 
