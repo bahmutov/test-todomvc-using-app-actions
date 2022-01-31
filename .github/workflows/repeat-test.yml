@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: Print workflow inputs
         run: |
-          Running the test "${{ github.event.inputs.title }}"
-          for ${{ github.event.inputs.n }} times
+          echo Running the test "${{ github.event.inputs.title }}"
+          echo for ${{ github.event.inputs.n }} times
 
       - name: Checkout 🛎
         uses: actions/checkout@v2
