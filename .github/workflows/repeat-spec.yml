@@ -1,0 +1,34 @@
+name: repeat-spec
+on:
+  workflow_dispatch:
+    description: Lets the user run a spec file N times in a row
+    inputs:
+      spec:
+        description: Part or full path to the spec file like "editing-spec.js"
+        required: true
+        type: string
+      n:
+        description: Number of times to repeat the test
+        required: false
+        default: 1
+        type: integer
+
+jobs:
+  repeat-spec:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print workflow inputs
+        run: |
+          echo Running the spec file "${{ github.event.inputs.spec }}"
+          echo for ${{ github.event.inputs.n }} times
+
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Run the spec N times
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run start-quiet
+          # use https://github.com/bahmutov/cypress-repeat to repeat the spec
+          command: npx cypress-repeat -n ${{ github.event.inputs.n }} --spec "**/${{ github.event.inputs.spec }}"
