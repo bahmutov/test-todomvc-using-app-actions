@@ -31,4 +31,4 @@ jobs:
         with:
           start: npm run start-quiet
           # use https://github.com/bahmutov/cypress-repeat to repeat the spec
-          command: npx cypress-repeat -n ${{ github.event.inputs.n }} --spec "**/${{ github.event.inputs.spec }}"
+          command: npx cypress-repeat -n ${{ github.event.inputs.n }} --spec '**/${{ github.event.inputs.spec }}'
