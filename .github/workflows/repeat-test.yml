@@ -1,0 +1,32 @@
+name: repeat-test
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Full or part of the test title
+        required: true
+        type: string
+      n:
+        description: Number of times to repeat the test
+        required: false
+        default: 1
+        type: integer
+
+jobs:
+  repeat-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print workflow inputs
+        run: |
+          Running the test "${{ github.event.inputs.title }}"
+          for ${{ github.event.inputs.n }} times
+
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # https://github.com/cypress-io/github-action
+      - name: Run the test N times
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          env: grep=${{ github.event.inputs.title }},burn=${{ github.event.inputs.n }}
