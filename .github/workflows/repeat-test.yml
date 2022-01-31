@@ -1,6 +1,7 @@
 name: repeat-test
 on:
   workflow_dispatch:
+    description: Lets the user run a test by title N times
     inputs:
       title:
         description: Full or part of the test title
