@@ -1,6 +1,6 @@
 # test-todomvc-using-app-actions
 
-[![Build status][ci-image]][ci-url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-9.5.0-brightgreen) [![test-todomvc-using-app-actions](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ovmwmi/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ovmwmi/runs)
+[![Build status][ci-image]][ci-url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-9.5.1-brightgreen) [![test-todomvc-using-app-actions](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ovmwmi/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ovmwmi/runs)
 
 > Example Cypress tests going from page objects to app actions
 
