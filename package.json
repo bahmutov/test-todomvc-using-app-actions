@@ -36,7 +36,7 @@
     "cypress-grep": "2.13.1",
     "cypress-repeat": "2.3.1",
     "cypress-watch-and-reload": "1.7.4",
-    "find-cypress-specs": "1.14.2",
+    "find-cypress-specs": "1.15.1",
     "prettier": "2.6.1",
     "start-server-and-test": "1.14.0"
   }
