@@ -34,7 +34,7 @@
   "devDependencies": {
     "cypress": "9.5.4",
     "cypress-grep": "2.13.1",
-    "cypress-repeat": "2.3.1",
+    "cypress-repeat": "2.3.2",
     "cypress-watch-and-reload": "1.7.4",
     "find-cypress-specs": "1.17.0",
     "prettier": "2.6.2",
