@@ -32,7 +32,7 @@
     "http-server": "14.1.0"
   },
   "devDependencies": {
-    "cypress": "9.6.1",
+    "cypress": "9.7.0",
     "cypress-grep": "2.13.1",
     "cypress-repeat": "2.3.2",
     "cypress-watch-and-reload": "1.7.6",
