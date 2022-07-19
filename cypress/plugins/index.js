@@ -20,7 +20,7 @@ module.exports = (on, config) => {
   require('cypress-watch-and-reload/plugins')(config)
 
   // https://github.com/cypress-io/cypress-grep
-  require('cypress-grep/src/plugin')(config)
+  require('cypress-grep/src/plugin')(on, config)
   // make sure to return the config object
   // as it might have been modified by the plugin
   return config
