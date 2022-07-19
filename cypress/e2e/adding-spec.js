@@ -10,7 +10,7 @@ import {
 
 describe('TodoMVC', function () {
   beforeEach(function () {
-    /** @type string */
+    /** @type number */
     let title
     cy.visit('/')
     cy.title().then((t) => {

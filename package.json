@@ -9,7 +9,8 @@
     "start-quiet": "http-server -p 8888 -c-1 --silent",
     "cypress": "cypress open",
     "dev": "start-test 8888 cypress",
-    "print-tests": "find-cypress-specs --names --tags"
+    "print-tests": "find-cypress-specs --names --tags",
+    "lint": "tsc --noEmit --pretty --allowJs cypress/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "cypress-watch-and-reload": "1.10.1",
     "find-cypress-specs": "1.18.0",
     "prettier": "2.7.1",
-    "start-server-and-test": "1.14.0"
+    "start-server-and-test": "1.14.0",
+    "typescript": "^4.7.4"
   }
 }
