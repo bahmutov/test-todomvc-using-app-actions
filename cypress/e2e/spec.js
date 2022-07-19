@@ -1,7 +1,7 @@
 // type definitions for Cypress object "cy" and cypress-grep
 /// <reference types="cypress-grep" />
 // type definition for out TodoModel
-/// <reference path='./model.d.ts' />
+// <reference path='./model.d.ts' />
 // @ts-check
 import { addTodos, allItems, TODO_ITEM_ONE, TODO_ITEM_TWO } from './utils'
 

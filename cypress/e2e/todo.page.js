@@ -1,15 +1,14 @@
-/// <reference types="cypress" />
-
+// @ts-check
 export class TodoPage {
   static TODO_ITEM_ONE = 'buy some cheese'
   static TODO_ITEM_TWO = 'feed the cat'
   static TODO_ITEM_THREE = 'book a doctors appointment'
 
-  visit () {
+  visit() {
     cy.visit('/')
   }
 
-  createTodos () {
+  createTodos() {
     cy.get('.new-todo', { log: false })
       .type(`${TodoPage.TODO_ITEM_ONE}{enter}`, { log: false })
       .type(`${TodoPage.TODO_ITEM_TWO}{enter}`, { log: false })
@@ -20,7 +19,10 @@ export class TodoPage {
     cy.get('.todo-list li', { log: false }).as('todos')
   }
 
-  createTodo (todo) {
+  /**
+   * @param {string} todo
+   */
+  createTodo(todo) {
     cy.get('.new-todo', { log: false }).type(`${todo}{enter}`, { log: false })
     cy.log(`Created todo "${todo}"`)
     return cy
@@ -28,18 +30,19 @@ export class TodoPage {
       .contains('li', todo.trim(), { log: false })
   }
 
-  toggle (k) {
-    cy.get('.todo-list li', { log: false })
-      .eq(k)
-      .find('.toggle')
-      .check()
+  /**
+   * @param {number} k Index of the todo to toggle
+   */
+  toggle(k) {
+    cy.get('.todo-list li', { log: false }).eq(k).find('.toggle').check()
   }
 
   /**
    * Returns either all todo items on the page,
    * or just a given one (zero index)
+   * @param {number|undefined} k
    */
-  todos (k) {
+  todos(k) {
     if (k !== undefined) {
       return cy.get('.todo-list li').eq(k)
     }
@@ -47,13 +50,14 @@ export class TodoPage {
     return cy.get('.todo-list li')
   }
 
-  filter (label) {
-    cy.get('.filters')
-      .contains(label)
-      .click()
+  /**
+   * @param {string} label to find
+   */
+  filter(label) {
+    cy.get('.filters').contains(label).click()
   }
 
-  clearCompleted () {
+  clearCompleted() {
     cy.get('.clear-completed').click()
   }
 }
