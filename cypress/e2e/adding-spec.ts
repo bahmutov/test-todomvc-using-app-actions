@@ -1,4 +1,3 @@
-// @ts-check
 import {
   addDefaultTodos,
   addTodos,
@@ -10,8 +9,7 @@ import {
 
 describe('TodoMVC', function () {
   beforeEach(function () {
-    /** @type string */
-    let title
+    let title: string
     cy.visit('/')
     cy.title().then((t) => {
       title = t
