@@ -1,4 +1,4 @@
-// @ts-check
+// Page object for working with the page UI
 export class TodoPage {
   static TODO_ITEM_ONE = 'buy some cheese'
   static TODO_ITEM_TWO = 'feed the cat'
@@ -22,7 +22,7 @@ export class TodoPage {
   /**
    * @param {string} todo
    */
-  createTodo(todo) {
+  createTodo(todo: string) {
     cy.get('.new-todo', { log: false }).type(`${todo}{enter}`, { log: false })
     cy.log(`Created todo "${todo}"`)
     return cy
@@ -33,16 +33,15 @@ export class TodoPage {
   /**
    * @param {number} k Index of the todo to toggle
    */
-  toggle(k) {
+  toggle(k: number) {
     cy.get('.todo-list li', { log: false }).eq(k).find('.toggle').check()
   }
 
   /**
    * Returns either all todo items on the page,
    * or just a given one (zero index)
-   * @param {number|undefined} k
    */
-  todos(k) {
+  todos(k?: number) {
     if (k !== undefined) {
       return cy.get('.todo-list li').eq(k)
     }
@@ -53,7 +52,7 @@ export class TodoPage {
   /**
    * @param {string} label to find
    */
-  filter(label) {
+  filter(label: string) {
     cy.get('.filters').contains(label).click()
   }
 

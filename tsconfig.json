@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "types": ["cypress", "cypress-grep"],
+    "lib": ["DOM", "ES2015"],
     "strict": true,
     "allowJs": true,
     "noEmit": true
   },
-  "include": ["cypress/e2e/model.d.ts", "cypress/e2e/*spec.ts"],
+  "include": ["cypress/e2e/*.ts"],
   "files": ["cypress/e2e/adding-spec.ts"]
 }

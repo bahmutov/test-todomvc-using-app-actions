@@ -1,8 +1,3 @@
-// type definitions for Cypress object "cy" and cypress-grep
-/// <reference types="cypress-grep" />
-// type definition for out TodoModel
-// <reference path='./model.d.ts' />
-// @ts-check
 import {
   addDefaultTodos,
   allItems,
@@ -20,9 +15,9 @@ describe('TodoMVC', function () {
     /**
      * Little utility function to click on a given filter on the page.
      * We are testing routing links, so these tests go through the DOM.
-     * @param {string} name
      */
-    const clickFilter = (name) => cy.get('.filters').contains(name).click()
+    const clickFilter = (name: string) =>
+      cy.get('.filters').contains(name).click()
 
     // but for everything else, like created todos and toggling, these tests
     // use app actions.

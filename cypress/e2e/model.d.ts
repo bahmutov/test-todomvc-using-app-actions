@@ -5,9 +5,9 @@
 // From out app actions we only use a couple of methods.
 interface TodoModel {
   todos: unknown[]
-  addTodo(...todos: string[])
-  toggle(item: unknown)
-  inform()
+  addTodo(...todos: string[]): void
+  toggle(item: unknown): void
+  inform(): void
 }
 // During tests there we set "window.model" property
 // now cy.window() returns Window instance with
