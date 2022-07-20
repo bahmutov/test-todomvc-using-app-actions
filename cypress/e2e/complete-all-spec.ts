@@ -1,8 +1,3 @@
-// type definitions for Cypress object "cy" and cypress-grep
-/// <reference types="cypress-grep" />
-// type definition for out TodoModel
-// <reference path='./model.d.ts' />
-// @ts-check
 import { addDefaultTodos, allItems, toggle } from './utils'
 
 describe('TodoMVC', function () {
