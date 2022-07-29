@@ -48,6 +48,7 @@ This repo shows how to use manual workflows to select the tests to run.
 
 - [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
 - [How To Tag And Run End-to-End Tests](https://glebbahmutov.com/blog/tag-tests/)
+- [Convert Cypress Specs from JavaScript to TypeScript](https://glebbahmutov.com/blog/cypress-js-to-ts/)
 
 ## IntelliSense
 
