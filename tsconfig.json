@@ -4,7 +4,8 @@
     "lib": ["DOM", "ES2015"],
     "strict": true,
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "resolveJsonModule": true
   },
   "include": ["cypress/e2e/*.ts"],
   "files": ["cypress/e2e/adding-spec.ts"]

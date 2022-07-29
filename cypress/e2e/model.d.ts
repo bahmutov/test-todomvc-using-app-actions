@@ -3,7 +3,7 @@
 // but in our example app does not have types,
 // so we write method signatures ourselves.
 
-export interface Todo {
+export type Todo = {
   title: string
   completed: boolean
 }
