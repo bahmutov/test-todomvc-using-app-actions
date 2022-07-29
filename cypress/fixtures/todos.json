@@ -1,0 +1,12 @@
+{
+  "todos": [
+    {
+      "title": "Write code",
+      "completed": true
+    },
+    {
+      "title": "Pass the tests",
+      "completed": false
+    }
+  ]
+}
