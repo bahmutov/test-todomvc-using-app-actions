@@ -95,7 +95,10 @@ workflows:
           name: Run sanity tests
           requires:
             - Run changed tests
-          build: npm run print-tests
+          # disable the test names, need to support
+          # TypeScript cypress.config.ts file
+          # https://github.com/bahmutov/find-cypress-specs/issues/47
+          # build: npm run print-tests
           start: npm start
           no-workspace: true
           env: grepTags=@sanity
