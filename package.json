@@ -10,7 +10,9 @@
     "cypress": "cypress open",
     "dev": "start-test 8888 cypress",
     "print-tests": "find-cypress-specs --names --tags",
-    "lint": "tsc --noEmit --pretty"
+    "lint": "tsc --noEmit --pretty",
+    "ci": "start-test 8888 cy:run",
+    "cy:run": "cypress run"
   },
   "repository": {
     "type": "git",
