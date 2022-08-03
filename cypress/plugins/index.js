@@ -8,16 +8,12 @@
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
 
-// This function is called when a project is opened or re-opened (e.g. due to
-// the project's config changing)
-require('cypress-watch-and-reload/plugins')
-
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 
   // https://github.com/bahmutov/cypress-watch-and-reload
-  require('cypress-watch-and-reload/plugins')(config)
+  require('cypress-watch-and-reload/plugins')(on, config)
 
   // https://github.com/cypress-io/cypress-grep
   require('cypress-grep/src/plugin')(on, config)

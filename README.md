@@ -29,6 +29,7 @@ npm run cypress
 9. `08-tags` tags the features and creates the ways to run CircleCI and GitHub Actions by selecting the tags to run.
 10. `09-regression` tags some tests as `@regression` and updates the CI workflows.
 11. `10-typescript` shows all specs written in TypeScript and passing the static types check.
+12. `11-config-ts` moves `cypress.config.js` to TypeScript
 
 ## Tests
 
