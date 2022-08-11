@@ -34,6 +34,11 @@ describe('TodoMVC', function () {
       },
     )
 
+    it('adds new items using a custom command', () => {
+      cy.addTodo(TODO_ITEM_ONE)
+      allItems().eq(0).find('label').should('contain', TODO_ITEM_ONE)
+    })
+
     it('adds items', { tags: ['@sanity', '@regression'] }, function () {
       // create several todos then check the number of items in the list
       cy.get(NEW_TODO)
