@@ -17,6 +17,13 @@ module.exports = (on, config) => {
 
   // https://github.com/cypress-io/cypress-grep
   require('cypress-grep/src/plugin')(on, config)
+
+  on('task', {
+    getNumber() {
+      return 42
+    },
+  })
+
   // make sure to return the config object
   // as it might have been modified by the plugin
   return config

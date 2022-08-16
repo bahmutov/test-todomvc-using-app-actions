@@ -10,6 +10,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "include": ["cypress/e2e/*.ts"],
+  "include": ["cypress/**/*.ts"],
   "files": ["cypress/e2e/adding-spec.ts"]
 }
