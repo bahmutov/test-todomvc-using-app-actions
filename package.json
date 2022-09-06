@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "cypress": "10.7.0",
-    "cypress-grep": "3.0.2",
+    "cypress-grep": "3.0.3",
     "cypress-repeat": "2.3.3",
     "cypress-watch-and-reload": "1.10.3",
     "find-cypress-specs": "1.18.0",
