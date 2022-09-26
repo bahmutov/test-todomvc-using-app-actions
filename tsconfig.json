@@ -11,5 +11,10 @@
     "resolveJsonModule": true
   },
   "include": ["cypress/**/*.ts"],
-  "files": ["cypress/e2e/adding-spec.ts"]
+  "files": ["cypress/e2e/adding-spec.ts"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }
