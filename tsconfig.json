@@ -8,7 +8,10 @@
     "allowJs": true,
     "noEmit": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@src/*": ["./js/*"]
+    }
   },
   "include": ["cypress/**/*.ts"],
   "files": ["cypress/e2e/adding-spec.ts"],
