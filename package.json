@@ -42,6 +42,6 @@
     "find-cypress-specs": "1.19.3",
     "prettier": "2.7.1",
     "start-server-and-test": "1.14.0",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   }
 }
