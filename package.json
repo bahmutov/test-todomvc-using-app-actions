@@ -39,7 +39,7 @@
     "cypress-grep": "3.0.4",
     "cypress-repeat": "2.3.3",
     "cypress-watch-and-reload": "1.10.5",
-    "find-cypress-specs": "1.19.3",
+    "find-cypress-specs": "1.19.4",
     "prettier": "2.8.1",
     "start-server-and-test": "1.15.1",
     "typescript": "4.9.3"
