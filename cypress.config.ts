@@ -18,5 +18,6 @@ export default defineConfig({
     baseUrl: 'http://localhost:8888',
     excludeSpecPattern: ['*.page.ts', 'utils.ts', '*.d.ts'],
     specPattern: 'cypress/e2e/**/*spec.{js,ts}',
+    experimentalRunAllSpecs: true,
   },
 })
