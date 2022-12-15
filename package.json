@@ -35,8 +35,8 @@
     "http-server": "14.1.1"
   },
   "devDependencies": {
-    "cypress": "10.11.0",
-    "cypress-grep": "3.0.4",
+    "cypress": "12.1.0",
+    "@bahmutov/cy-grep": "1.1.0",
     "cypress-repeat": "2.3.3",
     "cypress-watch-and-reload": "1.10.5",
     "find-cypress-specs": "1.20.2",

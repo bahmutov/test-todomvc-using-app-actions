@@ -25,7 +25,7 @@ npm run cypress
 5. `04-app-actions` controls application by mostly directly calling the [model instance](js/todoModel.js) directly to avoid always going through the page.
 6. `05-types` adds TypeScript [model interface](cypress/integration/model.d.ts) so our tests know the app actions [they can trigger](cypress/integration/utils.js)
 7. `06-split` splits all tests into multiple spec files.
-8. `07-grep` added tags and the [cypress-grep](https://github.com/cypress-io/cypress-grep) plugin.
+8. `07-grep` added tags and the [@bahmutov/cy-grep](https://github.com/bahmutov/cy-grep) plugin.
 9. `08-tags` tags the features and creates the ways to run CircleCI and GitHub Actions by selecting the tags to run.
 10. `09-regression` tags some tests as `@regression` and updates the CI workflows.
 11. `10-typescript` shows all specs written in TypeScript and passing the static types check.
@@ -93,3 +93,46 @@ Read more about [intelligent code completion in Cypress](https://on.cypress.io/i
 [renovate-app]: https://renovateapp.com/
 [ci-image]: https://circleci.com/gh/bahmutov/test-todomvc-using-app-actions.svg?style=svg
 [ci-url]: https://circleci.com/gh/bahmutov/test-todomvc-using-app-actions
+
+## Small print
+
+Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022
+
+- [@bahmutov](https://twitter.com/bahmutov)
+- [glebbahmutov.com](https://glebbahmutov.com)
+- [blog](https://glebbahmutov.com/blog)
+- [videos](https://www.youtube.com/glebbahmutov)
+- [presentations](https://slides.com/bahmutov)
+- [cypress.tips](https://cypress.tips)
+- [Cypress Tips & Tricks Newsletter](https://cypresstips.substack.com/)
+- [my Cypress courses](https://cypress.tips/courses)
+
+License: MIT - do anything with the code, but don't blame me if it does not work.
+
+Support: if you find any problems with this module, email / tweet /
+[open issue](https://github.com/bahmutov/test-todomvc-using-app-actions/issues) on Github
+
+## MIT License
+
+Copyright (c) 2022 Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt;
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.

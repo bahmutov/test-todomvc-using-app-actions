@@ -10,7 +10,7 @@ parameters:
     # @routing, @regression
     # or a combination of tags like "@adding @item" (OR)
     # "@editing+@item" (AND)
-    # see https://github.com/cypress-io/cypress-grep
+    # see https://github.com/bahmutov/cy-grep
     type: string
     default: ''
   RECORDED_RUN_TAG:

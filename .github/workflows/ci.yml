@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       # https://github.com/cypress-io/github-action
@@ -17,5 +18,5 @@ jobs:
           # start the application before running Cypress
           start: npm start
           # pass the grep tag to run only some tests
-          # https://github.com/cypress-io/cypress-grep
+          # https://github.com/bahmutov/cy-grep
           env: grepTags=@sanity

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["cypress", "cypress-grep"],
+    "types": ["cypress", "@bahmutov/cy-grep"],
     "lib": ["DOM", "ES2015"],
     "module": "es6",
     "target": "es5",

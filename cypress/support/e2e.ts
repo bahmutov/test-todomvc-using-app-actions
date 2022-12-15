@@ -13,9 +13,9 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// https://github.com/cypress-io/cypress-grep
+// https://github.com/bahmutov/cy-spok
 // @ts-ignore
-require('cypress-grep')()
+require('@bahmutov/cy-grep')()
 
 // @ts-ignore
 require('cypress-watch-and-reload/support')
