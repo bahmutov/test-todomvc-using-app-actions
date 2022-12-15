@@ -1,6 +1,6 @@
 # test-todomvc-using-app-actions
 
-[![Build status][ci-image]][ci-url] [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-12.1.0-brightgreen) [![test-todomvc-using-app-actions](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ovmwmi/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ovmwmi/runs) [![ci](https://github.com/bahmutov/test-todomvc-using-app-actions/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/bahmutov/test-todomvc-using-app-actions/actions/workflows/ci.yml)
+[![Build status][ci-image]][ci-url] [![renovate-app badge][renovate-badge]][renovate-app] [![test-todomvc-using-app-actions](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ovmwmi/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ovmwmi/runs) [![ci](https://github.com/bahmutov/test-todomvc-using-app-actions/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/bahmutov/test-todomvc-using-app-actions/actions/workflows/ci.yml) ![cypress version](https://img.shields.io/badge/cypress-12.1.0-brightgreen) ![@bahmutov/cy-grep version](https://img.shields.io/badge/@bahmutov/cy--grep-1.1.0-brightgreen)
 
 > Example Cypress tests going from page objects to app actions
 

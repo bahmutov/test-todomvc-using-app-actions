@@ -12,7 +12,8 @@
     "print-tests": "find-cypress-specs --names --tags",
     "lint": "tsc --noEmit --pretty",
     "ci": "start-test 8888 cy:run",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "badges": "npx -p dependency-version-badge update-badge cypress @bahmutov/cy-grep"
   },
   "repository": {
     "type": "git",
