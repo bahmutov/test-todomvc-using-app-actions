@@ -4,7 +4,11 @@
 
 > Example Cypress tests going from page objects to app actions
 
-Read blog post [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/) and [Convert Cypress Specs from JavaScript to TypeScript](https://glebbahmutov.com/blog/cypress-js-to-ts/).
+This repo was used as an example in these blog posts:
+
+- [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
+- [Convert Cypress Specs from JavaScript to TypeScript](https://glebbahmutov.com/blog/cypress-js-to-ts/).
+- [Run Just The Failed Tests In Cypress](https://glebbahmutov.com/blog/run-failed-tests/)
 
 ## Steps
 
