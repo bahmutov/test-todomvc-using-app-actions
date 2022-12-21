@@ -14,5 +14,9 @@ jobs:
         with:
           # we only want to install dependencies
           runTests: false
+
       - name: Print tests 🖨
         run: npm run print-tests
+
+      - name: Print spec file dependencies 🕸
+        run: npm run specs
