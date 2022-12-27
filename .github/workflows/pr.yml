@@ -28,5 +28,3 @@ jobs:
         # against the "master" branch
         # and including changed files imported by specs
         run: npm run trace-changed-specs
-        env:
-          DEBUG: find-cypress-specs
