@@ -1,0 +1,30 @@
+name: pr changed tests
+on: [pull_request]
+jobs:
+  changed-tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # need to fetch info about all branches
+          # to determine the changed spec files
+          # https://glebbahmutov.com/blog/faster-ci-feedback/
+          fetch-depth: 0
+
+      # Install NPM dependencies, cache them correctly
+      # https://github.com/cypress-io/github-action
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          # only install everything
+          runTests: false
+
+      - name: Changed specs
+        # see changed Cypress specs in this branch
+        run: npm run changed-specs
+
+      - name: Trace changed specs
+        # against the "master" branch
+        # and including changed files imported by specs
+        run: npm run trace-changed-specs
