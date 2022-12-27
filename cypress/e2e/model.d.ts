@@ -8,7 +8,9 @@ export interface Todo {
   completed: boolean
 }
 
-// From out app actions we only use a couple of methods.
+/**
+ * Several methods available in the application model object.
+ */
 interface TodoModel {
   todos: unknown[]
   addTodo(...todos: string[]): void
