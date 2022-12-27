@@ -27,4 +27,13 @@ jobs:
       - name: Trace changed specs
         # against the "master" branch
         # and including changed files imported by specs
+        id: trace
         run: npm run trace-changed-specs
+
+      - name: Run changed Cypress specs 🏎
+        if: ${{ steps.trace.outputs.changedSpecsN > 0 }}
+        uses: cypress-io/github-action@v5
+        with:
+          # we have already installed all dependencies above
+          install: false
+          spec: ${{ steps.trace.outputs.changedSpecs }}
