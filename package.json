@@ -16,7 +16,7 @@
     "badges": "npx -p dependency-version-badge update-badge cypress @bahmutov/cy-grep find-cypress-specs",
     "specs": "spec-change --folder cypress",
     "changed-specs": "find-cypress-specs --branch master --parent",
-    "trace-changed-specs": "find-cypress-specs --branch master --parent --trace-imports cypress"
+    "trace-changed-specs": "find-cypress-specs --branch master --parent --trace-imports cypress --set-gha-outputs"
   },
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
     "cypress": "12.2.0",
     "cypress-repeat": "2.3.3",
     "cypress-watch-and-reload": "1.10.5",
-    "find-cypress-specs": "1.21.0",
+    "find-cypress-specs": "1.22.0",
     "prettier": "2.8.1",
     "spec-change": "1.4.0",
     "start-server-and-test": "1.15.2",
