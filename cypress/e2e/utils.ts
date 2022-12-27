@@ -60,6 +60,9 @@ export const toggle = (k = 0) =>
       model.toggle(model.todos[k])
     })
 
+/**
+ * Selector for all items elements
+ */
 const ALL_ITEMS = '.todo-list li'
 
 /**

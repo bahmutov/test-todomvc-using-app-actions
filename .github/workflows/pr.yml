@@ -15,7 +15,11 @@ jobs:
           # only install everything
           runTests: false
 
+      - name: Changed specs
+        # see changed Cypress specs in this branch
+        run: npm run changed-specs
+
       - name: Trace changed specs
         # against the "master" branch
         # and including changed files imported by specs
-        run: npm run changed-specs
+        run: npm run trace-changed-specs
