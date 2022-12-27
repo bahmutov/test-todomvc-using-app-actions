@@ -6,6 +6,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          # need to fetch info about all branches
+          # to determine the changed spec files
+          # https://glebbahmutov.com/blog/faster-ci-feedback/
+          fetch-depth: 0
 
       # Install NPM dependencies, cache them correctly
       # https://github.com/cypress-io/github-action
