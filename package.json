@@ -14,7 +14,8 @@
     "ci": "start-test 8888 cy:run",
     "cy:run": "cypress run",
     "badges": "npx -p dependency-version-badge update-badge cypress @bahmutov/cy-grep find-cypress-specs",
-    "specs": "spec-change --folder cypress"
+    "specs": "spec-change --folder cypress",
+    "changed-specs": "find-cypress-specs --branch master --parent --trace-imports cypress"
   },
   "repository": {
     "type": "git",
