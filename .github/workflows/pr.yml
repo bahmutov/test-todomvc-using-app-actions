@@ -27,6 +27,7 @@ jobs:
       - name: Trace changed specs
         # against the "master" branch
         # and including changed files imported by specs
+        # https://github.com/bahmutov/find-cypress-specs
         id: trace
         run: npm run trace-changed-specs
 
