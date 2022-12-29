@@ -1,0 +1,83 @@
+{
+  "folder": "cypress",
+  "fileMask": "**/*.{js,ts}",
+  "deps": {
+    "e2e/utils.ts": [
+      "e2e/adding-spec.ts",
+      "e2e/clear-completed-spec.ts",
+      "e2e/complete-all-spec.ts",
+      "e2e/editing-spec.ts",
+      "e2e/item-spec.ts",
+      "e2e/persistence-spec.ts",
+      "e2e/routing-spec.ts",
+      "e2e/spec.ts"
+    ],
+    "e2e/model.d.ts": [
+      "e2e/cast-fixture-spec.ts",
+      "e2e/fixture-spec.ts",
+      "e2e/import-fixture-spec.ts",
+      "e2e/using-fixture-spec.ts"
+    ],
+    "fixtures/todos.json": [
+      "e2e/import-fixture-spec.ts"
+    ],
+    "e2e/adding-spec.ts": [
+      "e2e/adding-spec.ts"
+    ],
+    "e2e/cast-alias-spec.ts": [
+      "e2e/cast-alias-spec.ts"
+    ],
+    "e2e/cast-fixture-spec.ts": [
+      "e2e/cast-fixture-spec.ts"
+    ],
+    "e2e/cast-task-spec.ts": [
+      "e2e/cast-task-spec.ts"
+    ],
+    "e2e/clear-completed-spec.ts": [
+      "e2e/clear-completed-spec.ts"
+    ],
+    "e2e/complete-all-spec.ts": [
+      "e2e/complete-all-spec.ts"
+    ],
+    "e2e/editing-spec.ts": [
+      "e2e/editing-spec.ts"
+    ],
+    "e2e/fixture-spec.ts": [
+      "e2e/fixture-spec.ts"
+    ],
+    "e2e/import-fixture-spec.ts": [
+      "e2e/import-fixture-spec.ts"
+    ],
+    "e2e/index.d.ts": [
+      "e2e/index.d.ts"
+    ],
+    "e2e/item-spec.ts": [
+      "e2e/item-spec.ts"
+    ],
+    "e2e/path-alias-spec.ts": [
+      "e2e/path-alias-spec.ts"
+    ],
+    "e2e/persistence-spec.ts": [
+      "e2e/persistence-spec.ts"
+    ],
+    "e2e/routing-spec.ts": [
+      "e2e/routing-spec.ts"
+    ],
+    "e2e/spec.ts": [
+      "e2e/spec.ts"
+    ],
+    "e2e/todo.page.ts": [
+      "e2e/todo.page.ts"
+    ],
+    "e2e/using-fixture-spec.ts": [
+      "e2e/using-fixture-spec.ts"
+    ],
+    "plugins/index.js": [
+      "plugins/index.js"
+    ],
+    "support/e2e.ts": [
+      "support/e2e.ts"
+    ]
+  }
+}
+
