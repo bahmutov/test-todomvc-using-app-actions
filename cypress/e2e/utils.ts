@@ -69,9 +69,9 @@ const ALL_ITEMS = '.todo-list li'
  * Returns all todo items on the page.
  *
  * @example
- ```
-    import {allItems} from './utils'
-    allItems().should('not.exist')
- ```
+  ```
+  import {allItems} from './utils'
+  allItems().should('not.exist')
+  ```
  */
 export const allItems = () => cy.get(ALL_ITEMS)
