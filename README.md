@@ -95,6 +95,10 @@ And you can invoke the right methods on the `window.model`
 
 Read more about [intelligent code completion in Cypress](https://on.cypress.io/intelligent-code-completion).
 
+## Spec dependencies
+
+Using [spec-change](https://github.com/bahmutov/spec-change) utility we update the dependencies between the Cypress spec files and save them into [deps.json](./deps.json). See the [spec-dependencies workflow](./.github/workflows/spec-dependencies.yml)
+
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
 [ci-image]: https://circleci.com/gh/bahmutov/test-todomvc-using-app-actions.svg?style=svg
