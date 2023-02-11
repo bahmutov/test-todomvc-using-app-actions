@@ -1,4 +1,5 @@
 {
+  "warning": "This is a machine-generated file, do not modify it manually. Use https://github.com/bahmutov/spec-change",
   "folder": "cypress",
   "fileMask": "**/*.{js,ts}",
   "deps": {
