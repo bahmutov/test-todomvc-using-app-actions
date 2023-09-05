@@ -23,7 +23,7 @@ jobs:
           echo for ${{ github.event.inputs.n }} times
 
       - name: Checkout 🛎
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # https://github.com/cypress-io/github-action
       - name: Run the test N times
