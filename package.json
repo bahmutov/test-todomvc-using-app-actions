@@ -40,7 +40,7 @@
     "http-server": "14.1.1"
   },
   "devDependencies": {
-    "@bahmutov/cy-grep": "1.4.3",
+    "@bahmutov/cy-grep": "1.9.16",
     "cypress": "13.1.0",
     "cypress-repeat": "2.3.3",
     "cypress-watch-and-reload": "1.10.6",
