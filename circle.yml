@@ -3,6 +3,8 @@ orbs:
   # https://github.com/cypress-io/circleci-orb
   cypress: cypress-io/cypress@2.0.0
 
+executor: cypress/default
+
 parameters:
   GREP_TAGS:
     # tag can be an individual tag like
