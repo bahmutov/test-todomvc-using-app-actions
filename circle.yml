@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   # https://github.com/cypress-io/circleci-orb
-  cypress: cypress-io/cypress@2.0.0
+  cypress: cypress-io/cypress@3
 
 executor: cypress/default
 
@@ -40,12 +40,8 @@ workflows:
           # disable the test names, need to support
           # TypeScript cypress.config.ts file
           # https://github.com/bahmutov/find-cypress-specs/issues/47
-          # build: npm run print-tests
-          start: npm start
-          no-workspace: true
-          record: true
-          tags: '@nightly'
-          group: 'All tests'
+          start-command: 'npm start'
+          cypress-command: 'npx cypress run --record --tags @nightly --group "All tests"'
 
   tagged:
     when: << pipeline.parameters.GREP_TAGS >>
@@ -59,22 +55,16 @@ workflows:
                 name: Set any grepTags
                 command: echo 'export CYPRESS_grepTags="<< pipeline.parameters.GREP_TAGS >>"' >> $BASH_ENV
           name: Run tagged tests
-          build: npm run print-tests
-          start: npm start
-          no-workspace: true
-          record: true
-          # comma-separated tags will be split into individual tags on the Cypress Dashboard
-          tags: '<< pipeline.parameters.GREP_TAGS >>,<< pipeline.parameters.RECORDED_RUN_TAG >>'
-          group: 'Tagged tests'
+          start-command: 'npm start'
+          cypress-command: 'npx cypress run --record --tags "<< pipeline.parameters.GREP_TAGS >>,<< pipeline.parameters.RECORDED_RUN_TAG >>" --group "Tagged tests"'
 
   build:
     unless: << pipeline.parameters.GREP_TAGS >>
     jobs:
       - cypress/run:
           name: Run changed tests
-          start: npm start
-          no-workspace: true
-          command: |
+          start-command: 'npm start'
+          cypress-command: |
             # stop if on master branch - all tests should run there
             if [ "$CIRCLE_BRANCH" = "master" ]; then
               echo "Default branch, will run all tests"
@@ -100,12 +90,5 @@ workflows:
           name: Run sanity tests
           requires:
             - Run changed tests
-          # disable the test names, need to support
-          # TypeScript cypress.config.ts file
-          # https://github.com/bahmutov/find-cypress-specs/issues/47
-          # build: npm run print-tests
-          start: npm start
-          no-workspace: true
-          env: grepTags=@sanity
-          record: true
-          group: '2. all sanity specs'
+          start-command: npm start
+          cypress-command: 'npx cypress run --record --env grepTags=@sanity --group "2. all sanity specs"'
