@@ -43,7 +43,7 @@ jobs:
   # and only runs the tests for the picked test tag
   sanity:
     if: ${{ github.event.inputs.sanity == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
 
   adding:
     if: ${{ github.event.inputs.adding == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
@@ -71,7 +71,7 @@ jobs:
 
   complete:
     if: ${{ github.event.inputs.complete == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
@@ -85,7 +85,7 @@ jobs:
 
   editing:
     if: ${{ github.event.inputs.editing == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
@@ -99,7 +99,7 @@ jobs:
 
   item:
     if: ${{ github.event.inputs.item == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
@@ -113,7 +113,7 @@ jobs:
 
   persistence:
     if: ${{ github.event.inputs.persistence == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
@@ -127,7 +127,7 @@ jobs:
 
   routing:
     if: ${{ github.event.inputs.routing == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
@@ -141,7 +141,7 @@ jobs:
 
   regression:
     if: ${{ github.event.inputs.regression == 'true' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
