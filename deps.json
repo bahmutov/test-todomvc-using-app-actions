@@ -1,7 +1,8 @@
 {
   "warning": "This is a machine-generated file, do not modify it manually. Use https://github.com/bahmutov/spec-change",
+  "generatedAt": "2024-02-16T04:05:20.761Z",
   "folder": "cypress",
-  "fileMask": "**/*.{js,ts}",
+  "fileMask": "**/*.{js,ts,jsx,tsx}",
   "deps": {
     "e2e/utils.ts": [
       "e2e/adding-spec.ts",
