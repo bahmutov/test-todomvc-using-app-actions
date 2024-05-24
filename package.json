@@ -46,7 +46,7 @@
     "cypress-watch-and-reload": "1.10.14",
     "find-cypress-specs": "1.43.2",
     "prettier": "3.2.5",
-    "spec-change": "1.11.1",
+    "spec-change": "1.11.3",
     "start-server-and-test": "1.15.5",
     "typescript": "4.9.5"
   }
