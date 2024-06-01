@@ -42,7 +42,7 @@
   "devDependencies": {
     "@bahmutov/cy-grep": "1.9.17",
     "cypress": "13.10.0",
-    "cypress-repeat": "2.3.4",
+    "cypress-repeat": "2.3.5",
     "cypress-watch-and-reload": "1.10.14",
     "find-cypress-specs": "1.43.3",
     "prettier": "3.2.5",
