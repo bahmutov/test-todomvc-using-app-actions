@@ -43,7 +43,7 @@
     "@bahmutov/cy-grep": "1.10.0",
     "cypress": "13.13.0",
     "cypress-repeat": "2.3.5",
-    "cypress-watch-and-reload": "1.10.15",
+    "cypress-watch-and-reload": "1.10.16",
     "find-cypress-specs": "1.44.1",
     "prettier": "3.3.2",
     "spec-change": "1.11.4",
