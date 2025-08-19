@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@bahmutov/cy-grep": "1.11.6",
-    "cypress": "13.17.0",
+    "cypress": "14.5.4",
     "cypress-repeat": "2.3.9",
     "cypress-watch-and-reload": "1.10.20",
     "find-cypress-specs": "1.54.6",
