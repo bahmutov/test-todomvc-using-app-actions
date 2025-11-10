@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run sanity tests
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run adding tests
@@ -74,7 +74,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run complete tests
@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run editing tests
@@ -102,7 +102,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run item tests
@@ -116,7 +116,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run persistence tests
@@ -130,7 +130,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run routing tests
@@ -144,7 +144,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/cypress-io/github-action
       - name: Run regression tests
