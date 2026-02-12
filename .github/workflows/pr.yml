@@ -2,7 +2,7 @@ name: pr changed tests
 on: [pull_request]
 jobs:
   changed-tests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
