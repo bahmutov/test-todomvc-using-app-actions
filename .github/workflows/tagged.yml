@@ -52,7 +52,7 @@ jobs:
       # install dependencies and start the server
       # https://github.com/cypress-io/github-action
       - name: Install dependencies 📦
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           runTests: false
 
@@ -66,56 +66,56 @@ jobs:
       # https://github.com/cypress-io/github-action
       - name: Run sanity tests
         if: ${{ github.event.inputs.sanity == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@sanity
 
       - name: Run adding tests
         if: ${{ github.event.inputs.adding == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@adding
 
       - name: Run complete tests
         if: ${{ github.event.inputs.complete == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@complete
 
       - name: Run editing tests
         if: ${{ github.event.inputs.editing == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@editing
 
       - name: Run item tests
         if: ${{ github.event.inputs.item == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@item
 
       - name: Run persistence tests
         if: ${{ github.event.inputs.persistence == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@persistence
 
       - name: Run routing tests
         if: ${{ github.event.inputs.routing == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@routing
 
       - name: Run regression tests
         if: ${{ github.event.inputs.regression == 'true' }}
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           install: false
           env: grepTags=@regression

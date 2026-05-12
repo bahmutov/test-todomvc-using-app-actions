@@ -36,7 +36,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run the tagged tests N times
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm run start-quiet
           env: 'grepTags=${{ github.event.inputs.tag }},burn=${{ github.event.inputs.n }}'

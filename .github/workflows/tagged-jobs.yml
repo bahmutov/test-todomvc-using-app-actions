@@ -50,7 +50,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run sanity tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@sanity
@@ -64,7 +64,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run adding tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@adding
@@ -78,7 +78,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run complete tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@complete
@@ -92,7 +92,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run editing tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@editing
@@ -106,7 +106,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run item tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@item
@@ -120,7 +120,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run persistence tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@persistence
@@ -134,7 +134,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run routing tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@routing
@@ -148,7 +148,7 @@ jobs:
 
       # https://github.com/cypress-io/github-action
       - name: Run regression tests
-        uses: cypress-io/github-action@v2.11.8
+        uses: cypress-io/github-action@v7.3.0
         with:
           start: npm start
           env: grepTags=@regression

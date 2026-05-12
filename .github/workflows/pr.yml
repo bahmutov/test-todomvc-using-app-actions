@@ -15,7 +15,7 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # https://github.com/cypress-io/github-action
       - name: Cypress run
-        uses: cypress-io/github-action@v5.8.4
+        uses: cypress-io/github-action@v7.3.0
         with:
           # only install everything
           runTests: false
@@ -33,7 +33,7 @@ jobs:
 
       - name: Run changed Cypress specs 🏎
         if: ${{ steps.trace.outputs.changedSpecsN > 0 }}
-        uses: cypress-io/github-action@v5.8.4
+        uses: cypress-io/github-action@v7.3.0
         with:
           # we have already installed all dependencies above
           install: false
