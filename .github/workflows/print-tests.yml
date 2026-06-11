@@ -10,7 +10,7 @@ jobs:
       # and run all Cypress tests
       # https://github.com/cypress-io/github-action
       - name: Cypress run
-        uses: cypress-io/github-action@v4.2.2
+        uses: cypress-io/github-action@v7.4.0
         with:
           # we only want to install dependencies
           runTests: false
