@@ -47,7 +47,7 @@ jobs:
         run: echo "$EVENT"
 
       - name: Checkout 🛎
-        uses: actions/checkout@v4.3.1
+        uses: actions/checkout@v6.0.3
 
       # install dependencies and start the server
       # https://github.com/cypress-io/github-action
