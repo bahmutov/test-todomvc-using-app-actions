@@ -32,7 +32,7 @@ jobs:
           echo each test will run ${{ github.event.inputs.n }} times
 
       - name: Checkout 🛎
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
 
       # https://github.com/cypress-io/github-action
       - name: Run the tagged tests N times
